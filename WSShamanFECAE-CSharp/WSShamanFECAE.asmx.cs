@@ -35,6 +35,14 @@ namespace WSShamanFECAE_CSharp
             crtContratoVenta = 4,
         }
 
+        public enum ContratoVenta : int
+        {
+            cvTarjetaDeCredito,
+            cvDebitoAutomatico,
+            cvTransferenciaBancaria,
+            cvPagoMisCuentas
+        }
+
         [WebMethod()]
         public byte[] GetPDF_Cache(decimal pDocId, decimal pUsrId)
         {
@@ -316,98 +324,43 @@ namespace WSShamanFECAE_CSharp
         }
 
         [WebMethod()]
-        public byte[] GetCertificadoRetencion_Tango2(string pNroOp, Certificado pRetId)
+        public byte[] GetContratoVenta(string pClienteId, ContratoVenta oTipoContrato)
         {
 
             try
             {
                 ShamanClases.PanelC.Conexion objConexion = new ShamanClases.PanelC.Conexion();
-                // ---> Conecto a Cache
+                //// ---> Conecto a Cache
 
                 NameValueCollection appSettings = WebConfigurationManager.AppSettings;
 
                 if (objConexion.Iniciar(appSettings.Get("cacheServer"), int.Parse(appSettings.Get("cachePort")), appSettings.Get("cacheNameSpace"), appSettings.Get("cacheShamanAplicacion"), appSettings.Get("cacheShamanUser"), int.Parse(appSettings.Get("cacheShamanCentro")), true))
                 {
-                    ShamanClases.VentasC.Tango objTango = new ShamanClases.VentasC.Tango();
+                    //ShamanClases.VentasC.Tango objTango = new ShamanClases.VentasC.Tango();
                     MemoryStream vRet = null;
-                    SqlConnection cnn = objTango.UpTangoEngine(Convert.ToDecimal(appSettings.Get("tangoEmpresaId")), false);
-                    if (!(cnn == null))
+                    //SqlConnection cnn = objTango.UpTangoEngine(Convert.ToDecimal(appSettings.Get("tangoEmpresaId")), false);
+                    //if (!(cnn == null))
+                    //{
+
+                    //Ventas.ContratosClientes objContratosClientes = new Ventas.ContratosClientes();
+                    VentasC.ContratosClientes objContratosClientes = new VentasC.ContratosClientes();
+                    DataView vDataView = new DataView();
+                    MemoryStream vStream = new MemoryStream();
+
+                    DataTable dt = objContratosClientes.GetContratoVenta(pClienteId);
+
+                    //DataTable dt;
+                   
+                    //cnn.Close();
+                    objConexion.Cerrar(objConexion.PID, true);
+
+                    if (!(vRet == null))
                     {
-                        DataTable dt;
-                        switch (pRetId)
-                        {
-                            case Certificado.crtArba:
-                                dt = objTango.GetCertificadoRetencion(cnn, pNroOp, ShamanClases.VentasC.Tango.Certificado.crtArba);
-                                using (repCertificadoIIBB objReport = new repCertificadoIIBB())
-                                {
-                                    objReport.DataSource = new DataView(dt);
-                                    BindSection(objReport.grpCertificado, objReport.DataSource);
-                                    objReport.Impuesto.Text = "Comprobante de Retención IIBB Pcia. Bs.As.";
-                                    vRet = new MemoryStream();
-                                    objReport.ExportToPdf(vRet);
-                                }
-                                break;
-                            case Certificado.crtAgip:
-                                dt = objTango.GetCertificadoRetencion(cnn, pNroOp, ShamanClases.VentasC.Tango.Certificado.crtAgip);
-                                using (repCertificadoIIBB objReport = new repCertificadoIIBB())
-                                {
-                                    objReport.DataSource = new DataView(dt);
-                                    this.BindSection(objReport.grpCertificado, objReport.DataSource);
-                                    objReport.Impuesto.Text = "Comprobante de Retención IIBB Ciudad de Bs. As.";
-                                    vRet = new MemoryStream();
-                                    objReport.ExportToPdf(vRet);
-                                }
-                                break;
-                            case Certificado.crtGanancias:
-                                dt = objTango.GetCertificadoRetencion(cnn, pNroOp, ShamanClases.VentasC.Tango.Certificado.crtGanancias);
-                                using (repCertificadoGanancias objReport = new repCertificadoGanancias())
-                                {
-                                    objReport.DataSource = new DataView(dt);
-                                    BindSection(objReport.grpCertificado, objReport.DataSource);
-                                    objReport.Impuesto.Text = "Comprobante de Retención de Ganancias";
-                                    vRet = new MemoryStream();
-                                    objReport.ExportToPdf(vRet);
-                                }
-                                break;
-                            case Certificado.crtIVA:
-                                dt = objTango.GetCertificadoRetencion(cnn, pNroOp, ShamanClases.VentasC.Tango.Certificado.crtIVA);
-                                using (repCertificadoGanancias objReport = new repCertificadoGanancias())
-                                {
-                                    objReport.DataSource = new DataView(dt);
-                                    BindSection(objReport.grpCertificado, objReport.DataSource);
-                                    objReport.Impuesto.Text = "Comprobante de Retención de IVA";
-                                    vRet = new MemoryStream();
-                                    objReport.ExportToPdf(vRet);
-                                }
-                                break;
-
-                            case Certificado.crtCajaPrevisional:
-                                dt = objTango.GetCertificadoCajaPrevisional(cnn, pNroOp);
-                                using (repCertificadoCaja objReport = new repCertificadoCaja())
-                                {
-                                    objReport.DataSource = new DataView(dt);
-                                    BindSection(objReport.grpCertificado, objReport.DataSource);
-                                    vRet = new MemoryStream();
-                                    objReport.ExportToPdf(vRet);
-                                }
-
-                                break;
-                        }
-                        cnn.Close();
-                        objConexion.Cerrar(objConexion.PID, true);
-                        if (!(vRet == null))
-                        {
-                            return vRet.ToArray();
-                        }
-                        else
-                        {
-                            return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
-                        }
-
+                        return vRet.ToArray();
                     }
                     else
                     {
-                        return System.Text.Encoding.Unicode.GetBytes("No hay conexión a Tango");
+                        return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
                     }
 
                 }
@@ -415,13 +368,11 @@ namespace WSShamanFECAE_CSharp
                 {
                     return System.Text.Encoding.Unicode.GetBytes("No hay conexión a Cache");
                 }
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
 
         private void BindSection(Band pBand, object pSou)

@@ -127,7 +127,6 @@
             this.XrLabel29,
             this.XrLabel28,
             this.XrLine1});
-            this.grpCertificado.Expanded = false;
             this.grpCertificado.HeightF = 776.875F;
             this.grpCertificado.Name = "grpCertificado";
             // 

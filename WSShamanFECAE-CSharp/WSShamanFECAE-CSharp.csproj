@@ -139,6 +139,12 @@
     <Compile Include="report\repCertificadoCaja.Designer.cs">
       <DependentUpon>repCertificadoCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="report\repContratoVenta_tc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repContratoVenta_tc.Designer.cs">
+      <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
+    </Compile>
     <Compile Include="report\repImagenDocumento.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -162,11 +168,14 @@
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\ShamanCache\Shaman\ShamanClases\ShamanClases\ShamanClases.vbproj">
       <Project>{c67374e5-c7fb-43bb-a9b4-436cbc2e7524}</Project>
       <Name>ShamanClases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ShamanCache\Shaman\ShamanClases_CSharp\ShamanClases_CSharp.csproj">
+      <Project>{e9dec2d3-6082-454d-8f3d-d2456286371d}</Project>
+      <Name>ShamanClases_CSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="report\repCertificadoIIBB.resx">
       <DependentUpon>repCertificadoIIBB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repContratoVenta_tc.resx">
+      <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

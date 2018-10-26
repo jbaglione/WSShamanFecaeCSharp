@@ -8,7 +8,7 @@ ShamanClases
 <members>
 <member name="T:ShamanClases.My.Resources.Resources">
 <summary>
-  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+  Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
 </summary>
 </member>
 <member name="P:ShamanClases.My.Resources.Resources.ResourceManager">
@@ -19,7 +19,7 @@ ShamanClases
 <member name="P:ShamanClases.My.Resources.Resources.Culture">
 <summary>
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+  búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
 </summary>
 </member>
 </members>

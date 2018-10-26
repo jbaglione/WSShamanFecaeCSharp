@@ -196,3 +196,6 @@ C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\obj\Debug\WSShamanFECAE-CSharp.c
 C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\obj\Debug\WSShamanFECAE-CSharp.dll.licenses
 C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\obj\Debug\WSShamanFECAE-CSharp.dll
 C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\obj\Debug\WSShamanFECAE-CSharp.pdb
+C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\obj\Debug\WSShamanFECAE_CSharp.report.repContratoVenta_tc.resources
+C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\bin\ShamanClases_CSharp.dll
+C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\bin\ShamanClases_CSharp.pdb
