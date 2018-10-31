@@ -14,6 +14,8 @@ using static ShamanClases.modDeclares;
 using System.Web;
 using System.IO;
 using System.Collections.Specialized;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace WSShamanFECAE_CSharp
 {
@@ -323,46 +325,93 @@ namespace WSShamanFECAE_CSharp
 
         }
 
+        /// <summary>
+        /// Retorna el contrato en un Array de byte, correspondiente a un pdf.
+        /// </summary>
+        /// <param name="pClienteId"></param>
+        /// <param name="oTipoContrato"></param>
+        /// <returns></returns>
         [WebMethod()]
-        public byte[] GetContratoVenta(string pClienteId, ContratoVenta oTipoContrato)
+        public byte[] GetContratoVenta(string pClienteId)
         {
+             ShamanClases.PanelC.Conexion objConexion = new ShamanClases.PanelC.Conexion();
 
             try
             {
-                ShamanClases.PanelC.Conexion objConexion = new ShamanClases.PanelC.Conexion();
-                //// ---> Conecto a Cache
-
                 NameValueCollection appSettings = WebConfigurationManager.AppSettings;
 
                 if (objConexion.Iniciar(appSettings.Get("cacheServer"), int.Parse(appSettings.Get("cachePort")), appSettings.Get("cacheNameSpace"), appSettings.Get("cacheShamanAplicacion"), appSettings.Get("cacheShamanUser"), int.Parse(appSettings.Get("cacheShamanCentro")), true))
                 {
-                    //ShamanClases.VentasC.Tango objTango = new ShamanClases.VentasC.Tango();
                     MemoryStream vRet = null;
-                    //SqlConnection cnn = objTango.UpTangoEngine(Convert.ToDecimal(appSettings.Get("tangoEmpresaId")), false);
-                    //if (!(cnn == null))
-                    //{
-
-                    //Ventas.ContratosClientes objContratosClientes = new Ventas.ContratosClientes();
                     VentasC.ContratosClientes objContratosClientes = new VentasC.ContratosClientes();
                     DataView vDataView = new DataView();
                     MemoryStream vStream = new MemoryStream();
 
                     DataTable dt = objContratosClientes.GetContratoVenta(pClienteId);
 
-                    //DataTable dt;
-                   
-                    //cnn.Close();
+                    switch (dt.Rows[0]["da_FormaPago"].ToString())
+                    {
+                        case "TARJETA DE CREDITO":
+                            using (repContratoVenta_tc objReport = new repContratoVenta_tc())
+                            {
+                                objReport.DataSource = new DataView(dt);
+                                BindSection(objReport.grpContrato, objReport.DataSource, PersonalizarCamposTarjeta(objReport, dt));
+                                vRet = new MemoryStream();
+                                objReport.ExportToPdf(vRet);
+                            }
+                            break;
+                        case "DEBITO AUTOMATICO":
+                            using (repContratoVenta_da objReport = new repContratoVenta_da())
+                            {
+                                objReport.DataSource = new DataView(dt);
+                                BindSection(objReport.grpContrato, objReport.DataSource, PersonalizarCamposDebitoAutomatico(objReport, dt));
+                                vRet = new MemoryStream();
+                                objReport.ExportToPdf(vRet);
+                            }
+                            break;
+                        case "TRANSFERENCIA":
+                            using (repContratoVenta_tb objReport = new repContratoVenta_tb())
+                            {
+                                objReport.DataSource = new DataView(dt);
+                                BindSection(objReport.grpContrato, objReport.DataSource, PersonalizarCamposTransferencia(objReport, dt));
+                                vRet = new MemoryStream();
+                                objReport.ExportToPdf(vRet);
+                            }
+                            break;
+                        default:
+                            using (repContratoVenta objReport = new repContratoVenta())
+                            {
+                                objReport.DataSource = new DataView(dt);
+                                BindSection(objReport.grpContrato, objReport.DataSource, PersonalizarCamposDebitoEfectivo(objReport, dt));
+                                vRet = new MemoryStream();
+                                objReport.ExportToPdf(vRet);
+                            }
+                            break;
+                            //case ContratoVenta.cvTransferenciaBancaria:
+                            //    //using (repCertificadoGanancias objReport = new repCertificadoGanancias())
+                            //    //{
+                            //    //    objReport.DataSource = new DataView(dt);
+                            //    //    BindSection(objReport.grpCertificado, objReport.DataSource);
+                            //    //    objReport.Impuesto.Text = "Comprobante de Retención de Ganancias";
+                            //    //    vRet = new MemoryStream();
+                            //    //    objReport.ExportToPdf(vRet);
+                            //    //}
+                            //    break;
+                            //case ContratoVenta.cvPagoMisCuentas:
+                            //    //using (repCertificadoGanancias objReport = new repCertificadoGanancias())
+                            //    //{
+                            //    //    objReport.DataSource = new DataView(dt);
+                            //    //    BindSection(objReport.grpCertificado, objReport.DataSource);
+                            //    //    objReport.Impuesto.Text = "Comprobante de Retención de IVA";
+                            //    //    vRet = new MemoryStream();
+                            //    //    objReport.ExportToPdf(vRet);
+                            //    //}
+                            //    break;
+                    }
+
                     objConexion.Cerrar(objConexion.PID, true);
 
-                    if (!(vRet == null))
-                    {
-                        return vRet.ToArray();
-                    }
-                    else
-                    {
-                        return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
-                    }
-
+                    return vRet == null? System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF"): vRet.ToArray();
                 }
                 else
                 {
@@ -371,18 +420,188 @@ namespace WSShamanFECAE_CSharp
             }
             catch (Exception ex)
             {
+                objConexion.Cerrar(objConexion.PID, true);
                 throw ex;
             }
         }
 
-        private void BindSection(Band pBand, object pSou)
+        private List<string> PersonalizarCamposTarjeta(repContratoVenta_tc objReport, DataTable dt)
         {
-            //XRControl xr;
-            foreach (XRControl xr in pBand.Controls)
-                if ((xr.GetType().Name == "XRLabel"))
-                    if ((xr.Name.Substring(0, 2).ToLower() != "xr"))
-                        xr.DataBindings.Add("Text", pSou, xr.Name);
+            CamposPersonalidosBasico cpb = new CamposPersonalidosBasico(dt);
+            objReport.sdb_FechaIngreso.Text = cpb.FechaIngreso;
+            objReport.aclaracion.Text = cpb.Aclaracion;
+            objReport.aclaracion2.Text = cpb.Aclaracion;
+            objReport.ap_EntreCalles.Text = cpb.EntreCalles;
+            objReport.da_ImporteMensualDescripcion_c.Text = cpb.ImporteMensualDescripcion;
+            objReport.da_Firma.Image = cpb.Firma;
+            objReport.da_Firma.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            objReport.da_Firma2.Image = cpb.Firma;
+            objReport.da_Firma2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+
+            //Personalizacion Tarjeta
+            long periodo = Convert.ToInt64(dt.Rows[0]["tc_Vencimiento"]);
+            objReport.tc_Vencimiento.Text = periodo > 12010 ? modFechas.GetPeriodo(periodo) : "";
+            cpb.CamposPersonalizados.Add("tc_Vencimiento");
+            objReport.tc_TarjetaCredito.Text = dt.Rows[0]["tc_TarjetaCredito"].ToString();
+            cpb.CamposPersonalizados.Add("tc_TarjetaCredito");
+
+            return cpb.CamposPersonalizados;
         }
 
+        private List<string> PersonalizarCamposDebitoAutomatico(repContratoVenta_da objReport, DataTable dt)
+        {
+            CamposPersonalidosBasico cpb = new CamposPersonalidosBasico(dt);
+            objReport.sdb_FechaIngreso.Text = cpb.FechaIngreso;
+            objReport.aclaracion.Text = cpb.Aclaracion;
+            objReport.aclaracion2.Text = cpb.Aclaracion;
+            objReport.ap_EntreCalles.Text = cpb.EntreCalles;
+            objReport.da_ImporteMensualDescripcion_c.Text = cpb.ImporteMensualDescripcion;
+            objReport.da_Firma.Image = cpb.Firma;
+            objReport.da_Firma.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            objReport.da_Firma2.Image = cpb.Firma;
+            objReport.da_Firma2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+
+            ////Personalizacion Debito En Cuenta
+            //objReport.dc_NombreTitular.Text = dt.Rows[0]["dc_NombreTitular"].ToString();
+            //objReport.dc_TipoCuenta.Text = periodo > 12010 ? modFechas.GetPeriodo(periodo) : "";
+            //objReport.tc_.Text = 
+            //cpb.CamposPersonalizados.Add("tc_Vencimiento");
+
+            return cpb.CamposPersonalizados;
+        }
+
+        private List<string> PersonalizarCamposDebitoEfectivo(repContratoVenta objReport, DataTable dt)
+        {
+            CamposPersonalidosBasico cpb = new CamposPersonalidosBasico(dt);
+            objReport.sdb_FechaIngreso.Text = cpb.FechaIngreso;
+            objReport.aclaracion.Text = cpb.Aclaracion;
+            objReport.aclaracion2.Text = cpb.Aclaracion;
+            objReport.ap_EntreCalles.Text = cpb.EntreCalles;
+            objReport.da_ImporteMensualDescripcion_c.Text = cpb.ImporteMensualDescripcion;
+            objReport.da_Firma.Image = cpb.Firma;
+            objReport.da_Firma.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            objReport.da_Firma2.Image = cpb.Firma;
+            objReport.da_Firma2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+
+            ////Personalizacion Debito En Cuenta
+            //objReport.dc_NombreTitular.Text = dt.Rows[0]["dc_NombreTitular"].ToString();
+            //objReport.dc_TipoCuenta.Text = periodo > 12010 ? modFechas.GetPeriodo(periodo) : "";
+            //objReport.tc_.Text = 
+            //cpb.CamposPersonalizados.Add("tc_Vencimiento");
+
+            return cpb.CamposPersonalizados;
+        }
+
+        private List<string> PersonalizarCamposTransferencia(repContratoVenta_tb objReport, DataTable dt)
+        {
+            CamposPersonalidosBasico cpb = new CamposPersonalidosBasico(dt);
+            objReport.sdb_FechaIngreso.Text = cpb.FechaIngreso;
+            objReport.aclaracion.Text = cpb.Aclaracion;
+            objReport.aclaracion2.Text = cpb.Aclaracion;
+            objReport.ap_EntreCalles.Text = cpb.EntreCalles;
+            objReport.da_ImporteMensualDescripcion_c.Text = cpb.ImporteMensualDescripcion;
+            objReport.da_Firma.Image = cpb.Firma;
+            objReport.da_Firma.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            objReport.da_Firma2.Image = cpb.Firma;
+            objReport.da_Firma2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+
+            ////Personalizacion Debito En Cuenta
+            //objReport.dc_NombreTitular.Text = dt.Rows[0]["dc_NombreTitular"].ToString();
+            //objReport.dc_TipoCuenta.Text = periodo > 12010 ? modFechas.GetPeriodo(periodo) : "";
+            //objReport.tc_.Text = 
+            //cpb.CamposPersonalizados.Add("tc_Vencimiento");
+
+            return cpb.CamposPersonalizados;
+        }
+
+        //private List<string> PersonalizarCampos(repContratoVenta_tc objReport, DataTable dt)
+        //{
+        //    objReport.sdb_FechaIngreso.Text = modFechas.NtoD(Convert.ToInt64(dt.Rows[0]["sdb_FechaIngreso"])).ToString().Substring(0, 10);
+        //    objReport.aclaracion.Text = dt.Rows[0]["cc_NombreCompleto"].ToString();
+        //    objReport.aclaracion2.Text = dt.Rows[0]["cc_NombreCompleto"].ToString();
+        //    //Entre Calles.
+        //    string calle1 = dt.Rows[0]["ap_EntreCalle1"].ToString() == "\0" ? "" : dt.Rows[0]["ap_EntreCalle1"].ToString();
+        //    string calle2 = dt.Rows[0]["ap_EntreCalle2"].ToString() == "\0" ? "" : dt.Rows[0]["ap_EntreCalle2"].ToString();
+        //    objReport.ap_EntreCalles.Text = string.IsNullOrEmpty(calle2) ? calle1 : calle1 + " Y " + calle2;
+        //    //tc_Vencimiento
+        //    long periodo = Convert.ToInt64(dt.Rows[0]["tc_Vencimiento"]);
+        //    objReport.tc_Vencimiento.Text = periodo > 12010 ? modFechas.GetPeriodo(periodo) : "";
+        //    //Importe en letras.
+        //    NumerosLetra numLetras = new NumerosLetra();
+        //    objReport.da_ImporteMensualDescripcion_c.Text = "( PESOS " + numLetras.enletras(dt.Rows[0]["da_ImporteMensual"].ToString()) + ")";
+        //    string firma = dt.Rows[0]["Firma"].ToString();
+        //    if(!string.IsNullOrEmpty(firma) && firma != "\0")
+        //    {
+        //        objReport.da_Firma.Image = ByteArrayToImage(Convert.FromBase64String(firma.Replace("data:image/png;base64,", "")));
+        //        objReport.da_Firma.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+        //        objReport.da_Firma2.Image = objReport.da_Firma.Image;
+        //        objReport.da_Firma2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+        //    }
+        //    return new List<string> { "sdb_fechaingreso", "aclaracion", "aclaracion2", "ap_entrecalles", "tc_vencimiento", "da_importemensualdescripcion_c" };
+        //}
+
+        //private void xrPictureBox1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        //{
+        //    XRPictureBox xrBox = sender as XRPictureBox;
+        //    string base64String = this.GetCurrentColumnValue("SomeFieldName") as string;
+        //    Image img = ByteArrayToImage(Convert.FromBase64String(base64String));
+        //    xrBox.Image = img;
+        //}
+
+        private void BindSection(Band pBand, object pSou, List<string> pCamposPersonalizados = null)
+        {
+            //XRControl xr;
+            if (pCamposPersonalizados == null)
+            {
+                foreach (XRControl xr in pBand.Controls)
+                    if ((xr.GetType().Name == "XRLabel"))
+                        if (xr.Name.Substring(0, 2).ToLower() != "xr")
+                            xr.DataBindings.Add("Text", pSou, xr.Name);
+            }
+            else
+            {
+                foreach (XRControl xr in pBand.Controls)
+                    if ((xr.GetType().Name == "XRLabel"))
+                        if (xr.Name.Substring(0, 2).ToLower() != "xr" && !pCamposPersonalizados.Contains(xr.Name.ToLower()))
+                            xr.DataBindings.Add("Text", pSou, xr.Name);
+            }
+        }
+
+    }
+    public class CamposPersonalidosBasico
+    {
+        public string FechaIngreso { get; set; }
+        public string Aclaracion { get; set; }
+        public string EntreCalles { get; set; }
+        public string ImporteMensualDescripcion { get; set; }
+        public Image Firma { get; set; }
+        public List<string> CamposPersonalizados { get; set; }
+        public CamposPersonalidosBasico(DataTable dt)
+        {
+            FechaIngreso = modFechas.NtoD(Convert.ToInt64(dt.Rows[0]["sdb_FechaIngreso"])).ToString().Substring(0, 10);
+            Aclaracion = dt.Rows[0]["cc_NombreCompleto"].ToString();
+
+            //Entre Calles.
+            string calle1 = dt.Rows[0]["ap_EntreCalle1"].ToString() == "\0" ? "" : dt.Rows[0]["ap_EntreCalle1"].ToString();
+            string calle2 = dt.Rows[0]["ap_EntreCalle2"].ToString() == "\0" ? "" : dt.Rows[0]["ap_EntreCalle2"].ToString();
+            EntreCalles = string.IsNullOrEmpty(calle2) ? calle1 : calle1 + " Y " + calle2;
+
+            //Importe en letras.
+            NumerosLetra numLetras = new NumerosLetra();
+            ImporteMensualDescripcion = "( PESOS " + numLetras.enletras(dt.Rows[0]["da_ImporteMensual"].ToString()) + ")";
+
+            string firma = dt.Rows[0]["Firma"].ToString();
+            if (!string.IsNullOrEmpty(firma) && firma != "\0")
+            {
+                Firma = ByteArrayToImage(Convert.FromBase64String(firma.Replace("data:image/png;base64,", "")));
+            }
+            CamposPersonalizados = new List<string> { "sdb_fechaingreso", "aclaracion", "aclaracion2", "ap_entrecalles", "tc_vencimiento", "da_importemensualdescripcion_c" };
+        }
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WSShamanFECAE_CSharp.report
 {
-    partial class repContratoVenta_tc
+    partial class repContratoVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(repContratoVenta_tc));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(repContratoVenta));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.grpContrato = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.tc_TarjetaCredito = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel22 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
@@ -49,15 +48,7 @@
             this.xrLabel75 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel71 = new DevExpress.XtraReports.UI.XRLabel();
             this.sdb_Vendedor = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel67 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel68 = new DevExpress.XtraReports.UI.XRLabel();
-            this.tc_Numero = new DevExpress.XtraReports.UI.XRLabel();
-            this.tc_Vencimiento = new DevExpress.XtraReports.UI.XRLabel();
-            this.tc_NroDNI = new DevExpress.XtraReports.UI.XRLabel();
-            this.tc_NombreTitular = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel65 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel66 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel62 = new DevExpress.XtraReports.UI.XRLabel();
+            this.da_FormaPago = new DevExpress.XtraReports.UI.XRLabel();
             this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
             this.xrLabel61 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel60 = new DevExpress.XtraReports.UI.XRLabel();
@@ -155,7 +146,6 @@
             // grpContrato
             // 
             this.grpContrato.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.tc_TarjetaCredito,
             this.xrLabel22,
             this.xrLabel15,
             this.xrLabel13,
@@ -171,15 +161,7 @@
             this.xrLabel75,
             this.xrLabel71,
             this.sdb_Vendedor,
-            this.xrLabel67,
-            this.xrLabel68,
-            this.tc_Numero,
-            this.tc_Vencimiento,
-            this.tc_NroDNI,
-            this.tc_NombreTitular,
-            this.xrLabel65,
-            this.xrLabel66,
-            this.xrLabel62,
+            this.da_FormaPago,
             this.xrLabel61,
             this.xrLabel60,
             this.da_ImporteMensualDescripcion_c,
@@ -241,15 +223,6 @@
             this.XrLabel3});
             this.grpContrato.HeightF = 1025.911F;
             this.grpContrato.Name = "grpContrato";
-            // 
-            // tc_TarjetaCredito
-            // 
-            this.tc_TarjetaCredito.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_TarjetaCredito.LocationFloat = new DevExpress.Utils.PointFloat(334.4508F, 747.965F);
-            this.tc_TarjetaCredito.Name = "tc_TarjetaCredito";
-            this.tc_TarjetaCredito.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.tc_TarjetaCredito.SizeF = new System.Drawing.SizeF(165.4503F, 23.95825F);
-            this.tc_TarjetaCredito.StylePriority.UseFont = false;
             // 
             // xrLabel22
             // 
@@ -400,97 +373,16 @@
             this.sdb_Vendedor.StylePriority.UseFont = false;
             this.sdb_Vendedor.Text = "sdb_Vendedor";
             // 
-            // xrLabel67
+            // da_FormaPago
             // 
-            this.xrLabel67.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel67.LocationFloat = new DevExpress.Utils.PointFloat(10.09799F, 795.8818F);
-            this.xrLabel67.Name = "xrLabel67";
-            this.xrLabel67.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel67.SizeF = new System.Drawing.SizeF(94.99981F, 23.95837F);
-            this.xrLabel67.StylePriority.UseFont = false;
-            this.xrLabel67.Text = "Nº de Tarjeta:";
-            // 
-            // xrLabel68
-            // 
-            this.xrLabel68.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel68.LocationFloat = new DevExpress.Utils.PointFloat(394.5103F, 795.8817F);
-            this.xrLabel68.Name = "xrLabel68";
-            this.xrLabel68.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel68.SizeF = new System.Drawing.SizeF(87.50037F, 23.95831F);
-            this.xrLabel68.StylePriority.UseFont = false;
-            this.xrLabel68.Text = "Vencimiento:";
-            // 
-            // tc_Numero
-            // 
-            this.tc_Numero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_Numero.LocationFloat = new DevExpress.Utils.PointFloat(105.0982F, 795.8817F);
-            this.tc_Numero.Multiline = true;
-            this.tc_Numero.Name = "tc_Numero";
-            this.tc_Numero.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.tc_Numero.SizeF = new System.Drawing.SizeF(289.4118F, 23.95831F);
-            this.tc_Numero.StylePriority.UseFont = false;
-            this.tc_Numero.Text = "tc_Numero";
-            // 
-            // tc_Vencimiento
-            // 
-            this.tc_Vencimiento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_Vencimiento.LocationFloat = new DevExpress.Utils.PointFloat(482.2064F, 795.8818F);
-            this.tc_Vencimiento.Name = "tc_Vencimiento";
-            this.tc_Vencimiento.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.tc_Vencimiento.SizeF = new System.Drawing.SizeF(258.0877F, 23.95831F);
-            this.tc_Vencimiento.StylePriority.UseFont = false;
-            this.tc_Vencimiento.Text = "tc_Vencimiento";
-            // 
-            // tc_NroDNI
-            // 
-            this.tc_NroDNI.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_NroDNI.LocationFloat = new DevExpress.Utils.PointFloat(576.5675F, 771.9235F);
-            this.tc_NroDNI.Name = "tc_NroDNI";
-            this.tc_NroDNI.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.tc_NroDNI.SizeF = new System.Drawing.SizeF(163.5302F, 23.95831F);
-            this.tc_NroDNI.StylePriority.UseFont = false;
-            this.tc_NroDNI.Text = "tc_NroDNI";
-            // 
-            // tc_NombreTitular
-            // 
-            this.tc_NombreTitular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tc_NombreTitular.LocationFloat = new DevExpress.Utils.PointFloat(192.598F, 771.9233F);
-            this.tc_NombreTitular.Name = "tc_NombreTitular";
-            this.tc_NombreTitular.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.tc_NombreTitular.SizeF = new System.Drawing.SizeF(289.4118F, 23.95831F);
-            this.tc_NombreTitular.StylePriority.UseFont = false;
-            this.tc_NombreTitular.Text = "tc_NombreTitular";
-            // 
-            // xrLabel65
-            // 
-            this.xrLabel65.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel65.LocationFloat = new DevExpress.Utils.PointFloat(482.0099F, 771.9233F);
-            this.xrLabel65.Name = "xrLabel65";
-            this.xrLabel65.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel65.SizeF = new System.Drawing.SizeF(94.55762F, 23.95831F);
-            this.xrLabel65.StylePriority.UseFont = false;
-            this.xrLabel65.Text = "Nº DNI/CUIT:";
-            // 
-            // xrLabel66
-            // 
-            this.xrLabel66.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel66.LocationFloat = new DevExpress.Utils.PointFloat(10.09779F, 771.9233F);
-            this.xrLabel66.Name = "xrLabel66";
-            this.xrLabel66.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel66.SizeF = new System.Drawing.SizeF(182.5002F, 23.95837F);
-            this.xrLabel66.StylePriority.UseFont = false;
-            this.xrLabel66.Text = "Nombre completo del titular:";
-            // 
-            // xrLabel62
-            // 
-            this.xrLabel62.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel62.FormattingRules.Add(this.formattingRule1);
-            this.xrLabel62.LocationFloat = new DevExpress.Utils.PointFloat(10.09799F, 747.965F);
-            this.xrLabel62.Name = "xrLabel62";
-            this.xrLabel62.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel62.SizeF = new System.Drawing.SizeF(324.3528F, 23.95831F);
-            this.xrLabel62.StylePriority.UseFont = false;
-            this.xrLabel62.Text = "Pago por débito automático de tarjeta de crédito ";
+            this.da_FormaPago.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.da_FormaPago.FormattingRules.Add(this.formattingRule1);
+            this.da_FormaPago.LocationFloat = new DevExpress.Utils.PointFloat(9.799932F, 747.9648F);
+            this.da_FormaPago.Name = "da_FormaPago";
+            this.da_FormaPago.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.da_FormaPago.SizeF = new System.Drawing.SizeF(243.4348F, 23.95831F);
+            this.da_FormaPago.StylePriority.UseFont = false;
+            this.da_FormaPago.Text = "da_FormaPago";
             // 
             // formattingRule1
             // 
@@ -520,11 +412,11 @@
             // da_ImporteMensualDescripcion_c
             // 
             this.da_ImporteMensualDescripcion_c.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.da_ImporteMensualDescripcion_c.LocationFloat = new DevExpress.Utils.PointFloat(382.8428F, 646.0898F);
+            this.da_ImporteMensualDescripcion_c.LocationFloat = new DevExpress.Utils.PointFloat(394.5095F, 646.0898F);
             this.da_ImporteMensualDescripcion_c.Multiline = true;
             this.da_ImporteMensualDescripcion_c.Name = "da_ImporteMensualDescripcion_c";
             this.da_ImporteMensualDescripcion_c.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.da_ImporteMensualDescripcion_c.SizeF = new System.Drawing.SizeF(357.058F, 23.95825F);
+            this.da_ImporteMensualDescripcion_c.SizeF = new System.Drawing.SizeF(345.3913F, 23.95825F);
             this.da_ImporteMensualDescripcion_c.StylePriority.UseFont = false;
             this.da_ImporteMensualDescripcion_c.Text = "da_ImporteMensualDescripcion";
             // 
@@ -545,7 +437,7 @@
             this.da_ImporteMensual.Multiline = true;
             this.da_ImporteMensual.Name = "da_ImporteMensual";
             this.da_ImporteMensual.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.da_ImporteMensual.SizeF = new System.Drawing.SizeF(101.2749F, 23.95831F);
+            this.da_ImporteMensual.SizeF = new System.Drawing.SizeF(112.9416F, 23.95831F);
             this.da_ImporteMensual.StylePriority.UseFont = false;
             this.da_ImporteMensual.Text = "da_IMPORTE_MENSUAL";
             // 
@@ -1231,7 +1123,7 @@
             this.xrLabel17.Text = "CONDICIONES DE LA PRESTACIÓN";
             this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // repContratoVenta_tc
+            // repContratoVenta
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
@@ -1265,15 +1157,7 @@
         internal DevExpress.XtraReports.UI.XRLabel xrLabel4;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel71;
         internal DevExpress.XtraReports.UI.XRLabel sdb_Vendedor;
-        internal DevExpress.XtraReports.UI.XRLabel xrLabel67;
-        internal DevExpress.XtraReports.UI.XRLabel xrLabel68;
-        internal DevExpress.XtraReports.UI.XRLabel tc_Numero;
-        internal DevExpress.XtraReports.UI.XRLabel tc_Vencimiento;
-        internal DevExpress.XtraReports.UI.XRLabel tc_NroDNI;
-        internal DevExpress.XtraReports.UI.XRLabel tc_NombreTitular;
-        internal DevExpress.XtraReports.UI.XRLabel xrLabel65;
-        internal DevExpress.XtraReports.UI.XRLabel xrLabel66;
-        internal DevExpress.XtraReports.UI.XRLabel xrLabel62;
+        internal DevExpress.XtraReports.UI.XRLabel da_FormaPago;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel61;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel60;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel57;
@@ -1351,6 +1235,5 @@
         internal DevExpress.XtraReports.UI.XRLabel da_ImporteMensualDescripcion_c;
         internal DevExpress.XtraReports.UI.XRLabel aclaracion2;
         private DevExpress.XtraReports.UI.FormattingRule formattingRule1;
-        internal DevExpress.XtraReports.UI.XRLabel tc_TarjetaCredito;
     }
 }

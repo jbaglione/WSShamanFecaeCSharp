@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\baglione.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,6 +139,24 @@
     </Compile>
     <Compile Include="report\repCertificadoCaja.Designer.cs">
       <DependentUpon>repCertificadoCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repContratoVenta_tb.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repContratoVenta_tb.Designer.cs">
+      <DependentUpon>repContratoVenta_tb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repContratoVenta_da.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repContratoVenta_da.Designer.cs">
+      <DependentUpon>repContratoVenta_da.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repContratoVenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repContratoVenta.Designer.cs">
+      <DependentUpon>repContratoVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="report\repContratoVenta_tc.cs">
       <SubType>Component</SubType>
@@ -192,6 +211,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="report\repCertificadoIIBB.resx">
       <DependentUpon>repCertificadoIIBB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repContratoVenta_tb.resx">
+      <DependentUpon>repContratoVenta_tb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repContratoVenta_da.resx">
+      <DependentUpon>repContratoVenta_da.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repContratoVenta.resx">
+      <DependentUpon>repContratoVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="report\repContratoVenta_tc.resx">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
