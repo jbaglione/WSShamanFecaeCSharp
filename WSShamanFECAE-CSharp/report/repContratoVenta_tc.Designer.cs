@@ -129,6 +129,8 @@
             this.xrLabel84 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
+            this.sdb_NroArea = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -155,6 +157,8 @@
             // grpContrato
             // 
             this.grpContrato.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel28,
+            this.sdb_NroArea,
             this.tc_TarjetaCredito,
             this.xrLabel22,
             this.xrLabel15,
@@ -1093,10 +1097,10 @@
             // XrLabel2
             // 
             this.XrLabel2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00007F, 118.125F);
+            this.XrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00008F, 118.125F);
             this.XrLabel2.Name = "XrLabel2";
             this.XrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.XrLabel2.SizeF = new System.Drawing.SizeF(729.9999F, 23.95833F);
+            this.XrLabel2.SizeF = new System.Drawing.SizeF(512.4999F, 23.95833F);
             this.XrLabel2.StylePriority.UseFont = false;
             this.XrLabel2.Text = "GRUPO PARAMEDIC";
             // 
@@ -1233,6 +1237,26 @@
             this.xrLabel17.Text = "CONDICIONES DE LA PRESTACIÓN";
             this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
+            // xrLabel28
+            // 
+            this.xrLabel28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(537.7445F, 118.125F);
+            this.xrLabel28.Name = "xrLabel28";
+            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(98.71259F, 23.95831F);
+            this.xrLabel28.StylePriority.UseFont = false;
+            this.xrLabel28.Text = "Nro. de Cliente:";
+            // 
+            // sdb_NroArea
+            // 
+            this.sdb_NroArea.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sdb_NroArea.LocationFloat = new DevExpress.Utils.PointFloat(636.4584F, 118.125F);
+            this.sdb_NroArea.Name = "sdb_NroArea";
+            this.sdb_NroArea.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.sdb_NroArea.SizeF = new System.Drawing.SizeF(103.5425F, 23.95833F);
+            this.sdb_NroArea.StylePriority.UseFont = false;
+            this.sdb_NroArea.Text = "sdb_NroArea";
+            // 
             // repContratoVenta_tc
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1354,5 +1378,7 @@
         internal DevExpress.XtraReports.UI.XRLabel aclaracion2;
         private DevExpress.XtraReports.UI.FormattingRule formattingRule1;
         internal DevExpress.XtraReports.UI.XRLabel tc_TarjetaCredito;
+        internal DevExpress.XtraReports.UI.XRLabel xrLabel28;
+        internal DevExpress.XtraReports.UI.XRLabel sdb_NroArea;
     }
 }
