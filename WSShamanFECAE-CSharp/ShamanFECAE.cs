@@ -188,6 +188,8 @@ namespace WSShamanFECAE_CSharp
                     if (!(cnn == null))
                     {
                         DataTable dt;
+                        //FIX Cambio en tango.
+                        pNroOp = pNroOp.Length == 12 ? "0" + pNroOp : pNroOp;
                         switch (pRetId)
                         {
                             case Certificado.crtArba:
@@ -371,8 +373,8 @@ namespace WSShamanFECAE_CSharp
         public byte[] GetComprobante(int documentoId)
         {
             MemoryStream vRet = null;
-            DataView vDataView = new DataView();
-            MemoryStream vStream = new MemoryStream();
+            //DataView vDataView = new DataView();
+            //MemoryStream vStream = new MemoryStream();
 
             try
             {
