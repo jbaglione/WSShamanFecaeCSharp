@@ -284,6 +284,81 @@
   <data name="xrLabel4.Text" xml:space="preserve">
     <value>Solicito la incorporación al sistema de cobertura plan AREA PROTEGIDA, tomando conocimiento de las especificaciones de los servicios comprendidos y aceptando de total conformidad lo indicado al dorso del presente.</value>
   </data>
+  <data name="xrLabel19.Text" xml:space="preserve">
+    <value>1.Grupo Paramedic, en adelante “Paramedic” brindara a la entidad contratante, los servicios que le correspondieran al Plan “Área Protegida” solicitado, cuyo características y alcances se especifican a continuación.
+
+2. Área Protegida: se define como tal, al predio que la entidad contratante declare al momento del ingreso al Plan “Área Protegida”, para ser cubierto ante cualquier necesidad de Emergencia y Urgencia Médica que pudiera suscitarse dentro del mismo. La cobertura incluye tanto al personal estable, terceros ocasionales o público en general, siempre que se encuentren dentro de área de cobertura. El servicio estará disponible las 24 hs. Del día, los 365 días del año.
+
+3. Emergencia Médica: es toda situación médica en la que, de no mediar una asistencia inmediata y por personal médico y paramédico calificados, se pone en peligro la vida, los órganos y/o funciones, debiendo iniciarse las acciones médicas en la escena de los hechos.
+
+Urgencia Médica: es toda situación médica que si bien no reviste gravedad ni reclama asistencia de Emergencia, necesita ser vista en un tiempo perentorio ya que puede, con el tiempo, convertirse en una emergencia si no se le brinda la atención adecuada.
+
+4. El servicio comprenderá: a) La presencia en el lugar solicitado de un profesional médico con el instrumental apto para estas circunstancias, a bordo de una unidad polivalente de alta complejidad. b) Eventual traslado del paciente al establecimiento médico que corresponda por su Cobertura Médica o aquel que el profesional interviniente considere conveniente por la gravedad del cuadro que presente el paciente en el momento de la atención. En estos casos la presentación y responsabilidad de Paramedic cesará con la transferencia del paciente a la institución receptora.
+
+Procedimiento operativo: los pedidos de servicio ingresaran a la Central de Operaciones de Paramedic al número telefónico 5777-5550 o al 0810-999-0911; se recepcionará el servicio y se asignará la unidad que corresponda a la zona, el abonado se identificará mediante el número que se le fuera asignado al momento de su incorporación al sistema, expresando la sintomatología que presenta el paciente, confirmando domicilio y entre calles, y algún otro dato que requiera el operador de Paramedic. Ante cualquier inquietud se podrá comunicar a nuestro Departamento de Atención Personalizada de Lunes a Viernes, de 9 a 17 hs. al teléfono 0810-333-0911.
+
+5. La condición de abonado al Plan “Área Protegida” se adquiere a las 72 hs hábiles de la fecha de firma de la presente solicitud de cobertura y se mantendrá con el pago mensual y puntual de las cuotas, por parte de la entidad contratante. La mora en el pago de las cuotas será automática y generará un interés punitorio del 2% mensual, el que se calculará por cada día de retardo, hasta su efectivo pago.
+
+6. El pago en término, es condición esencial para la formulación de presente contrato, motivo por el cual la falta de pago de 2 (dos) meses consecutivos, producirá la mora y la caducidad automática del Plan contratado, como así también de aquellos servicios que se hubiera requerido en forma adicional, quedando Paramedic desobligado de toda prestación, sin necesidad de notificación previa. Para su rehabilitación será condición indispensable el pago total de las cuotas, servicios e intereses devengados hasta ese momento.
+
+7. Servicios adicionales: Paramedic deja expresamente aclarado que no se obliga a prestar dentro del abono de Área Protegida, ningún tipo de servicios adicionales, como ser: prácticas de enfermería (tomas de presión, aplicación de inyecciones, curaciones, cambios de sondas, etc.) ni consultas médicas (visitas médicas, visita médica laboral o control de ausentismo, etc.) Este tipo de servicios adicionales podrán ser brindados siempre con cargo fijo por prestación, el que deberá ser abonado finalizando la asistencia o en su defecto se incluirá en la factura mensual correspondiente, con el concepto de servicios adicionales, siempre y cuando su prestación hubiera sido convenida en la solicitud de adhesión. De requerir otros servicios no contemplados en este plan, los mismos serán realizados según lista de aranceles vigentes, consúltenos.
+
+8. Si los costos inherentes a la prestación contratada sufrieran incremento (salarios, insumos, combustibles, etc.), o la tasa de utilización del servicio por parte de la empresa usuaria excede los parámetros estándares para su actividad, Paramedic podrá modificar los valores pactados en el presente convenio, informando de tal circunstancia a la entidad contratante.
+
+9. Tanto la entidad contratante del sistema asistencial de Área Protegida como Paramedic, podrán poner fin a la presente contratación sin necesidad de expresión de causa, mediante notificación escrita con 30 días de anticipación, salvo que tal situación se origine por lo descripto en el punto número seis.
+</value>
+  </data>
+  <data name="da_Firma2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
   <data name="xrPictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALkAAAA0CAYAAADWg5laAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -394,79 +469,6 @@
         YkqM2pIXGTgxGffMglTC2j2nhBL+L4GMPDdWNqOzPZbN8CSYb5GE6X7X2Y7CClRp3CU8XlCReBJPsZpo
         1wLqn4D/SgMv4fGDp/57u40vlPZewmMCFZ68hBKeRCiNvIQnHkojL+GJh9LIS3jioTTyEp54KI28hCce
         SiMv4QmHEP4XN2PUwG5GgpQAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="da_Firma2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="xrLabel19.Text" xml:space="preserve">
-    <value>1. Grupo Paramedic, en adelante “Paramedic” brindara a la entidad contratante, los servicios que le correspondieran al Plan “Área Protegida” solicitado, cuyo características y alcances se especifican a continuación.
-
-2. Área Protegida: se define como tal, al predio que la entidad contratante declare al momento del ingreso al Plan “Área Protegida”, para ser cubierto ante cualquier necesidad de Emergencia Médica que pudiera suscitarse dentro del mismo. La cobertura incluye tanto al personal estable, terceros ocasionales o público en general, siempre que se encuentren dentro de área de cobertura. El servicio estará disponible las 24 hs. Del día, los 365 días del año.
-
-3. Emergencia Médica: se entiende por emergencia médica, a toda aquella situación en que la vida de una persona pueda encontrarse seriamente comprometida, corriendo riesgo de no mediar una rápida asistencia médica.
-
-4. El servicio comprenderá: a) La presencia en el lugar solicitado de un profesional médico con el instrumental apto para estas circunstancias, a bordo de una unidad polivalente de alta complejidad. B) Eventual traslado del paciente al establecimiento médico que corresponda por su Cobertura Médica o aquel que el profesional interviniente considere conveniente por la gravedad del cuadro que presente el paciente en el momento de la atención. En estos casos la presentación y responsabilidad de Paramedic cesara con la transferencia del paciente a la institución receptora.
-
-Procedimiento operativo: Los pedidos de servicio ingresaran al Call Center de Paramedic al número telefónico 5777-5550 o al 0810-999-0911; se recepcionará el servicio y se asignara la unidad que corresponda a la zona, el abonado se identificara mediante el número que se le fuera asignado al momento de su incorporación al sistema, expresando la sintomatología que presenta el paciente, confirmando domicilio y entre calles, y algún otro dato que requiera el operador de Paramedic. Ante cualquier inquietud se podrá comunicar a nuestro departamento de atención personalizada de Lunes a Viernes, de 9 a 17 hs. Al teléfono 0810-333-0911.
-
-5. La condición de abonado al Plan “Área Protegida” se adquiere a las 72 hs hábiles de la fecha de firma de la presente solicitud de cobertura y se mantendrá con el pago mensual y puntual de las cuotas, por parte de la entidad contratante. La mora en el pago de las cuotas será automática y generará un interés punitorio del 2% mensual, el que se calculará por cada día de retardo, hasta su efectivo pago.
-
-6. El pago en término, es condición esencial para la formulación de presente contrato, motivo por el cual la falta de pago de 2 (dos) meses consecutivos, producirá la mora y la caducidad automática del Plan contratado, como asi también de aquellos servicios que se hubiera requerido en forma adicional, quedando Paramedic desobligado de toda prestación, sin necesidad de notificación previa. Para su rehabilitación será condición indispensable el pago total de las cuotas, servicios e intereses devengados hasta ese momento.
-
-7. Servicios adicionales: Paramedic deja expresamente aclarado que no se obliga a prestar dentro del abono de Área Protegida, ningún tipo de servicios adicionales, como ser: prácticas de enfermería (tomas de presión, aplicación de inyecciones, curaciones, cambios de sondas, etc.) ni consultas médicas (visitas médicas, visita médica laboral o control de ausentismo, etc.) Este tipo de servicios adicionales podrán ser brindados siempre con cargo fijo por prestación, el que deberá ser abonado finalizando la asistencia o en su defecto se incluirá en la factura mensual correspondiente, con el concepto de servicios adicionales, siempre y cuando su prestación hubiera sido convenida en la solicitud de adhesión. De requerir otros servicios no contemplados en este plan, los mismos serán realizados según lista de aranceles vigentes, consúltenos.
-
-8. Si los costos inherentes a la prestación contratada sufrieran incremento (salarios, insumos, combustibles, etc.), o la tasa de utilización del servicio por parte de la empresa usuaria excede los parámetros estándares para su actividad, Paramedic, podrá modificar los valores pactados en el presente convenio, informando de tal circunstancia a la entidad contratante.
-
-9. Tanto la entidad contratante del sistema asistencial de área protegida como Paramedic, podrán poner fin a la presente contratación sin necesidad de expresión de causa, mediante notificación escrita con 30 días de anticipación, salvo que tal situación se origine por lo descripto en el punto número seis.
 </value>
   </data>
 </root>
