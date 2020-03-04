@@ -380,17 +380,23 @@ namespace WSShamanFECAE_CSharp
             {
                 ConnectionStringCache connectionString = GetConnectionString();
                 VentasC.ClientesDocumentos objClientesDocumentos = new VentasC.ClientesDocumentos(connectionString);
-                ReciboModel rm = objClientesDocumentos.GetDesignerRecibo<ReciboModel>(documentoId);
-                if (rm != null)
+                ReciboModel reciboGrales = objClientesDocumentos.GetDesignerRecibo<ReciboModel>(documentoId);
+                if (reciboGrales != null)
                 {
                     //TODO: Clase y metodo de verdad
-                    DataTable dtImp1 = new DataTable();// objClientesDocumentos.GetDTDesigner(documentoId, "D");
-                    DataTable dtImp2 = new DataTable(); //objClientesDocumentos.GetDTDesigner(documentoId, "D");
+                    DataTable dtImportes = objClientesDocumentos.GetImputacionesRecibo(documentoId); //  CreateDummyDataTable();
+                    DataTable dtFormas = objClientesDocumentos.GetPagosYFormas(documentoId);
+
+                    string periodo = dtImportes.Rows[0]["Periodo"].ToString();
+                    string concepto = periodo.Substring(4, 2) + "/" + periodo.Substring(0, 4);
+
+                    NumerosLetra nl = new NumerosLetra();
+                    string importeDescripcion = nl.enletras(reciboGrales.Importe);
 
                     using (repRecibo objReport = new repRecibo())
                     {
                         //objReport.DataSource = new DataView(dt);
-                        PersonalizarCamposRecibo(objReport, rm, dtImp1, dtImp2);
+                        PersonalizarCamposRecibo(objReport, reciboGrales, dtImportes, dtFormas, importeDescripcion, concepto);
                         //BindSection(objReport.grpContrato, objReport.DataSource, PersonalizarCamposRecibo(objReport, dt, dtImp1, dtImp2));
                         vRet = new MemoryStream();
                         objReport.ExportToPdf(vRet);
@@ -404,6 +410,23 @@ namespace WSShamanFECAE_CSharp
                 throw ex;
             }
             return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
+        }
+
+        private DataTable CreateDummyDataTable()
+        {
+            DataSet ds = new DataSet();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("colFecha");
+            dt.Columns.Add("colTipoComprobante");
+            dt.Columns.Add("colNroFactura");
+            dt.Columns.Add("colImporte");
+
+            dt.Rows.Add(new object[] { DateTime.Now, "FAC", "A002100000086", 270824.50 });
+
+            dt.Rows.Add(new object[] { DateTime.Now, "FAC", "A002100000087", 100.50 });
+            //ds.Tables.Add(dt);
+            return dt;
         }
 
         private static ConnectionStringCache GetConnectionString()
@@ -447,7 +470,7 @@ namespace WSShamanFECAE_CSharp
             return cpb.CamposPersonalizados;
         }
 
-        private List<string> PersonalizarCamposRecibo(repRecibo objReport, ReciboModel rm, DataTable dtImp, DataTable dtImp2)
+        private List<string> PersonalizarCamposRecibo(repRecibo objReport, ReciboModel rm, DataTable dtImportes, DataTable dtFormas, string importeDescripcion, string concepto)
         {
             //ReciboModel rm = new ReciboModel(dt, dtImp);
             objReport.RazonSocialCompleta.Text = rm.RazonSocialCompleta;
@@ -464,6 +487,11 @@ namespace WSShamanFECAE_CSharp
             objReport.Domicilio.Text = rm.Domicilio;
             objReport.IVA.Text = rm.EmpresaSituacionIva;
             objReport.Cuit.Text = rm.Cuit;
+
+            SetSubReportImportes(objReport, dtImportes);
+            SetSubReportFormas(objReport, dtFormas, importeDescripcion, concepto);
+
+
 
             //if (rm.ImporteDescripcion != null  && rm.ImporteDescripcion.Length > 36)
             //{
@@ -512,6 +540,171 @@ namespace WSShamanFECAE_CSharp
             //rm.CamposPersonalizados.Add("tc_TarjetaCredito");
 
             return rm.CamposPersonalizados;
+        }
+
+        private void SetSubReportImportes(repRecibo objReport, DataTable dtImportes)
+        {
+            try
+            {
+                var bandsReport = objReport.Bands[BandKind.GroupHeader];
+                XRSubreport detailReport = bandsReport.FindControl("xrSubreport1", true) as XRSubreport;
+                XtraReport reportSource = detailReport.ReportSource as XtraReport;
+                var bandsSubReport = reportSource.Bands[BandKind.Detail];
+                XRTable table = bandsSubReport.FindControl("xrTable1", true) as XRTable;
+                var realTable = (XRTable)((DevExpress.XtraPrinting.IBrickOwner)table).RealControl;
+
+                float rowHeight = 25.0F;
+                for (int i = 0; i <= (dtImportes.Rows.Count - 1); i++)
+                {
+                    XRTableRow rowObs = new XRTableRow();
+                    rowObs.HeightF = rowHeight;
+                    for (int j = 0; j <= 3; j++)
+                    {
+                        XRTableCell cell = new XRTableCell();
+                        switch (j)
+                        {
+                            case 0:
+                                cell.Text = Convert.ToDateTime(dtImportes.Rows[i]["FecDocumento"]).ToShortDateString();
+                                cell.WidthF = 75;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 1:
+                                cell.Text = dtImportes.Rows[i]["TipoComprobante"].ToString();
+                                cell.WidthF = 50;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 2:
+                                cell.Text = dtImportes.Rows[i]["NroComprobante"].ToString();
+                                cell.WidthF = 100;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 3:
+                                cell.Text = "$" + dtImportes.Rows[i]["Importe"].ToString();
+                                cell.WidthF = 94;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+                                break;
+                        }
+                        cell.Font = new Font("Tahoma", 8);
+                        rowObs.Cells.Add(cell);
+                    }
+                    realTable.Rows.Add(rowObs);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private void SetSubReportFormas(repRecibo objReport, DataTable dtFormas, string importeDescripcion, string concepto)
+        {
+            try
+            {
+                var bandsReport = objReport.Bands[BandKind.GroupHeader];
+                XRSubreport detailReport = bandsReport.FindControl("xrSubreport2", true) as XRSubreport;
+                XtraReport reportSource = detailReport.ReportSource as XtraReport;
+                var bandsSubReport = reportSource.Bands[BandKind.Detail];
+
+
+                XRLabel importeDescripcionPart1 = bandsSubReport.FindControl("importeDescripcionPart1", true) as XRLabel;
+                XRLabel importeDescripcionPart2 = bandsSubReport.FindControl("importeDescripcionPart2", true) as XRLabel;
+                XRLabel conceptoPart1 = bandsSubReport.FindControl("ConceptoPart1", true) as XRLabel;
+                //XRLabel conceptoPart2 = bandsSubReport.FindControl("ConceptoPart2", true) as XRLabel;
+
+                if(importeDescripcion.Length <= 30)
+                {
+                    importeDescripcionPart1.Text = importeDescripcion;
+                    importeDescripcionPart2.Text = "";
+                }
+                else
+                {
+                    string part1 = importeDescripcion.Substring(0, 29);
+                    
+                    importeDescripcionPart1.Text = importeDescripcion.Substring(29, 1) != " "? part1 + "-": part1;
+                    importeDescripcionPart2.Text = importeDescripcion.Substring(29, importeDescripcion.Length - 29);
+                }
+
+                conceptoPart1.Text = concepto;
+
+                XRTable table = bandsSubReport.FindControl("xrTable1", true) as XRTable;
+                var realTable = (XRTable)((DevExpress.XtraPrinting.IBrickOwner)table).RealControl;
+
+                float rowHeight = 25.0F;
+                for (int i = 0; i <= (dtFormas.Rows.Count - 1); i++)
+                {
+                    XRTableRow rowObs = new XRTableRow();
+                    rowObs.HeightF = rowHeight;
+                    for (int j = 0; j <= 4; j++)
+                    {
+                        XRTableCell cell = new XRTableCell();
+                        string formaDePago = dtFormas.Rows[i]["FormaDePago"].ToString();
+                        switch (j)
+                        {
+                            case 0:
+                                cell.Text = formaDePago;
+                                cell.WidthF = 52.5F;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 1:
+                                cell.Text = formaDePago == "EF"? "" : dtFormas.Rows[i]["Banco"].ToString();
+                                cell.WidthF = 90;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                                break;
+                            case 2:
+                                cell.Text = formaDePago != "CH" ? "" : dtFormas.Rows[i]["NroCheque"].ToString();
+                                cell.WidthF = 80;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+                                break;
+                            case 3:
+                                cell.Text = formaDePago != "CH" ? "" : Convert.ToDateTime(dtFormas.Rows[i]["FecCheque"]).ToShortDateString();
+                                cell.WidthF = 75;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 4:
+                                cell.Text = "$" + dtFormas.Rows[i]["Importe"].ToString();
+                                cell.WidthF = 94;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+                                break;
+                        }
+                        cell.Font = new Font("Tahoma", 8);
+                        rowObs.Cells.Add(cell);
+                    }
+                    realTable.Rows.Add(rowObs);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        private DataTable CreateDummyDataTable2()
+        {
+            DataSet ds = new DataSet();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("colFormaDePago");
+            dt.Columns.Add("colBanco");
+            dt.Columns.Add("colNroCheque");
+            dt.Columns.Add("colFecCheque");
+            dt.Columns.Add("colImporte");
+
+            dt.Rows.Add(new object[] { "EF", "", "", DateTime.Now, 270824.50 });
+            dt.Rows.Add(new object[] { "CH", "SANTANDER RIO S.A.", 83981410, DateTime.Now, 270824.50 });
+
+            //ds.Tables.Add(dt);
+            return dt;
         }
 
         private void SetImportesPorTipo(repRecibo objReport, List<ImportesPorTipo> importesPorTipo)

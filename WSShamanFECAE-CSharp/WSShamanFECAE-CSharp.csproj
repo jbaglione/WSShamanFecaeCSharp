@@ -183,6 +183,12 @@
     <Compile Include="report\repContratoVenta_tc.Designer.cs">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
     </Compile>
+    <Compile Include="report\subRepReciboFormasPago.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\subRepReciboFormasPago.Designer.cs">
+      <DependentUpon>subRepReciboFormasPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="report\subRepImportes.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="report\repContratoVenta_tc.resx">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\subRepReciboFormasPago.resx">
+      <DependentUpon>subRepReciboFormasPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="report\repRecibo.resx">
       <DependentUpon>repRecibo.cs</DependentUpon>

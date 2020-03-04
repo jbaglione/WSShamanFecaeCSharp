@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace WSShamanFECAE_CSharp.report
 {
-    public partial class repRecibo : DevExpress.XtraReports.UI.XtraReport
+    public partial class subRepReciboFormasPago : DevExpress.XtraReports.UI.XtraReport
     {
-        public repRecibo()
+        public subRepReciboFormasPago()
         {
             InitializeComponent();
         }
