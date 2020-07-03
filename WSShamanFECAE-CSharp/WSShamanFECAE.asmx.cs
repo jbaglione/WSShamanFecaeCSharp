@@ -45,6 +45,19 @@ namespace WSShamanFECAE_CSharp
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="pRecetaId"></param>
+        /// <param name="pUsrId"></param>
+        /// <returns></returns>
+        [WebMethod()]
+        public byte[] GetRecetaPdf(decimal pRecetaId, decimal pUsrId)
+        {
+            ShamanFECAE FECAE = new ShamanFECAE();
+            return FECAE.GetRecetaPdf(pRecetaId, pUsrId);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="pInc"></param>
         /// <param name="pUsrId"></param>
         /// <returns></returns>

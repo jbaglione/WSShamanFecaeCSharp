@@ -138,6 +138,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\RecetaModels\MedicamentosModel.cs" />
+    <Compile Include="Models\RecetaModels\ClientesPlanes.cs" />
+    <Compile Include="Models\RecetaModels\ClientesRecetas.cs" />
+    <Compile Include="Models\RecetaModels\RecetaModel.cs" />
     <Compile Include="Models\ReciboModel.cs" />
     <Compile Include="Models\ImportesPorTipo.cs" />
     <Compile Include="Models\ImporteItem.cs" />
@@ -182,6 +186,24 @@
     </Compile>
     <Compile Include="report\repContratoVenta_tc.Designer.cs">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repReceta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repReceta.Designer.cs">
+      <DependentUpon>repReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\subMedicamentosText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\subMedicamentosText.Designer.cs">
+      <DependentUpon>subMedicamentosText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\subMedicamentos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\subMedicamentos.Designer.cs">
+      <DependentUpon>subMedicamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="report\subRepReciboFormasPago.cs">
       <SubType>Component</SubType>
@@ -251,6 +273,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="report\repContratoVenta_tc.resx">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repReceta.resx">
+      <DependentUpon>repReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\subMedicamentosText.resx">
+      <DependentUpon>subMedicamentosText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\subMedicamentos.resx">
+      <DependentUpon>subMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="report\subRepReciboFormasPago.resx">
       <DependentUpon>subRepReciboFormasPago.cs</DependentUpon>

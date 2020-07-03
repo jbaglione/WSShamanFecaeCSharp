@@ -15,6 +15,7 @@ using System.IO;
 using System.Reflection;
 using WSShamanFECAE_CSharp.Models;
 using WSShamanFECAE_CSharp.Enums;
+using WSShamanFECAE_CSharp.Models.RecetaModels;
 
 namespace WSShamanFECAE_CSharp
 {
@@ -411,7 +412,39 @@ namespace WSShamanFECAE_CSharp
             }
             return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
         }
+        public byte[] GetRecetaPdf(decimal pRecetaId, decimal pUsrId)
+        {
+            MemoryStream vRet = null;
+            //DataView vDataView = new DataView();
+            //MemoryStream vStream = new MemoryStream();
 
+            try
+            {
+                ConnectionStringCache connectionString = GetConnectionString();
+
+                if (!(pRecetaId > 0))
+                    return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
+                RecetaModel receta = new EmergencyC.Recetas(connectionString).GetRecetaByID<RecetaModel>(pRecetaId);
+                receta.Medicamentos = new EmergencyC.RecetasMedicamentos(connectionString).GetByRecetaId<MedicamentosModel>(pRecetaId);
+
+                if (receta != null)
+                {
+                    using (repReceta objReport = new repReceta())
+                    {
+                        PersonalizarCamposReceta(objReport, receta);
+                        vRet = new MemoryStream();
+                        objReport.ExportToPdf(vRet);
+                    }
+
+                    return vRet == null ? System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF") : vRet.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return System.Text.Encoding.Unicode.GetBytes("No pudo armarse el PDF");
+        }
         private DataTable CreateDummyDataTable()
         {
             DataSet ds = new DataSet();
@@ -542,6 +575,134 @@ namespace WSShamanFECAE_CSharp
             return rm.CamposPersonalizados;
         }
 
+        private void PersonalizarCamposReceta(repReceta objReport, RecetaModel rm)
+        {
+            objReport.nroReceta.Text = rm.NroReceta.ToString("0000000000");
+            //ReciboModel rm = new ReciboModel(dt, dtImp);
+            objReport.Paciente.Text = rm.Nombre;
+            objReport.Entidad.Text = rm.Cliente.ClienteId;
+            objReport.plan.Text = rm.Plan.Id;
+            objReport.NroAfiliado.Text = rm.NroAfiliado;
+            objReport.observaciones.Text = rm.Observaciones;
+            objReport.Fecha.Text = rm.FecReceta.ToShortDateString();
+            objReport.medico.Text = rm.Medico;
+
+
+            SetSubReportMedicamentosText(objReport, rm.Medicamentos);
+
+        }
+
+        private void SetSubReportMedicamentos(repReceta objReport, List<MedicamentosModel> medicamentos)
+        {
+            try
+            {
+                var bandsReport = objReport.Bands[BandKind.GroupHeader];
+                XRSubreport detailReport = bandsReport.FindControl("xrSubreport1", true) as XRSubreport;
+                XtraReport reportSource = detailReport.ReportSource as XtraReport;
+                var bandsSubReport = reportSource.Bands[BandKind.Detail];
+                XRTable table = bandsSubReport.FindControl("xrTable1", true) as XRTable;
+                var realTable = (XRTable)((DevExpress.XtraPrinting.IBrickOwner)table).RealControl;
+
+                float rowHeight = 25.0F;
+                foreach (var med in medicamentos)
+                {
+                    XRTableRow rowObs = new XRTableRow();
+                    rowObs.HeightF = rowHeight;
+                    for (int j = 0; j <= 4; j++)
+                    {
+                        XRTableCell cell = new XRTableCell();
+                        switch (j)
+                        {
+                            case 0:
+                                cell.Text = med.Nombre;
+                                cell.WidthF = 80;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 1:
+                                cell.Text = med.Droga;
+                                cell.WidthF = 75;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 2:
+                                cell.Text = med.Presentacion;
+                                cell.WidthF = 90;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 3:
+                                cell.Text = med.Observaciones;
+                                cell.WidthF = 90;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                            case 4:
+                                cell.Text = med.Cantidad.ToString() + " ";
+                                cell.WidthF = 20;
+                                cell.BorderWidth = 0.5F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                        }
+                        cell.Font = new Font("Arial", 8);
+                        rowObs.Cells.Add(cell);
+                    }
+                    realTable.Rows.Add(rowObs);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void SetSubReportMedicamentosText(repReceta objReport, List<MedicamentosModel> medicamentos)
+        {
+            try
+            {
+                var bandsReport = objReport.Bands[BandKind.GroupHeader];
+                XRSubreport detailReport = bandsReport.FindControl("xrSubreport1", true) as XRSubreport;
+                XtraReport reportSource = detailReport.ReportSource as XtraReport;
+                var bandsSubReport = reportSource.Bands[BandKind.Detail];
+                XRTable table = bandsSubReport.FindControl("xrTable1", true) as XRTable;
+                var realTable = (XRTable)((DevExpress.XtraPrinting.IBrickOwner)table).RealControl;
+
+                float rowHeight = 25.0F;
+                foreach (var med in medicamentos)
+                {
+                    XRTableRow rowObs = new XRTableRow();
+                    rowObs.HeightF = rowHeight;
+                    for (int j = 0; j <= 1; j++)
+                    {
+                        XRTableCell cell = new XRTableCell();
+                        switch (j)
+                        {
+                            case 0:
+                                cell.Text = med.MedicamentoFull;
+                                cell.WidthF = 330;
+                                cell.BorderWidth = 0F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                                cell.Multiline = true;
+                                break;
+                            case 1:
+                                cell.Text = string.Format("X {0}", med.Cantidad);
+                                cell.WidthF = 20;
+                                cell.BorderWidth = 0F;
+                                cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+                                break;
+                        }
+                        cell.Font = new Font("Arial", 8);
+                        rowObs.Cells.Add(cell);
+                    }
+                    realTable.Rows.Add(rowObs);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void SetSubReportImportes(repRecibo objReport, DataTable dtImportes)
         {
             try
@@ -598,8 +759,8 @@ namespace WSShamanFECAE_CSharp
             {
                 throw ex;
             }
-
         }
+
 
         private void SetSubReportFormas(repRecibo objReport, DataTable dtFormas, string importeDescripcion, string concepto)
         {
@@ -616,7 +777,7 @@ namespace WSShamanFECAE_CSharp
                 XRLabel conceptoPart1 = bandsSubReport.FindControl("ConceptoPart1", true) as XRLabel;
                 //XRLabel conceptoPart2 = bandsSubReport.FindControl("ConceptoPart2", true) as XRLabel;
 
-                if(importeDescripcion.Length <= 30)
+                if (importeDescripcion.Length <= 30)
                 {
                     importeDescripcionPart1.Text = importeDescripcion;
                     importeDescripcionPart2.Text = "";
@@ -624,8 +785,8 @@ namespace WSShamanFECAE_CSharp
                 else
                 {
                     string part1 = importeDescripcion.Substring(0, 29);
-                    
-                    importeDescripcionPart1.Text = importeDescripcion.Substring(29, 1) != " "? part1 + "-": part1;
+
+                    importeDescripcionPart1.Text = importeDescripcion.Substring(29, 1) != " " ? part1 + "-" : part1;
                     importeDescripcionPart2.Text = importeDescripcion.Substring(29, importeDescripcion.Length - 29);
                 }
 
@@ -652,7 +813,7 @@ namespace WSShamanFECAE_CSharp
                                 cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
                                 break;
                             case 1:
-                                cell.Text = formaDePago == "EF"? "" : dtFormas.Rows[i]["Banco"].ToString();
+                                cell.Text = formaDePago == "EF" ? "" : dtFormas.Rows[i]["Banco"].ToString();
                                 cell.WidthF = 90;
                                 cell.BorderWidth = 0.5F;
                                 cell.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
