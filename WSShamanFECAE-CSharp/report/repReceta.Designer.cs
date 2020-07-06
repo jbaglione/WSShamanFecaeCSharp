@@ -38,7 +38,6 @@
             this.nroReceta = new DevExpress.XtraReports.UI.XRLabel();
             this.letrachica = new DevExpress.XtraReports.UI.XRLabel();
             this.medico = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             this.Matricula = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.observaciones = new DevExpress.XtraReports.UI.XRLabel();
@@ -96,7 +95,6 @@
             this.nroReceta,
             this.letrachica,
             this.medico,
-            this.xrLabel12,
             this.Matricula,
             this.xrLabel6,
             this.observaciones,
@@ -209,28 +207,12 @@
             this.medico.Text = "medico";
             this.medico.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
             // 
-            // xrLabel12
-            // 
-            this.xrLabel12.BorderColor = System.Drawing.Color.Navy;
-            this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(500.548F, 763.124F);
-            this.xrLabel12.Name = "xrLabel12";
-            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel12.SizeF = new System.Drawing.SizeF(35.04633F, 23.95825F);
-            this.xrLabel12.StylePriority.UseBorderColor = false;
-            this.xrLabel12.StylePriority.UseBorders = false;
-            this.xrLabel12.StylePriority.UseFont = false;
-            this.xrLabel12.StylePriority.UseTextAlignment = false;
-            this.xrLabel12.Text = "M/N:";
-            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
             // Matricula
             // 
             this.Matricula.BorderColor = System.Drawing.Color.Navy;
             this.Matricula.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Matricula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Matricula.LocationFloat = new DevExpress.Utils.PointFloat(535.5944F, 763.124F);
+            this.Matricula.LocationFloat = new DevExpress.Utils.PointFloat(504.6431F, 763.1255F);
             this.Matricula.Multiline = true;
             this.Matricula.Name = "Matricula";
             this.Matricula.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -240,7 +222,7 @@
             this.Matricula.StylePriority.UseFont = false;
             this.Matricula.StylePriority.UseTextAlignment = false;
             this.Matricula.Text = "Matricula";
-            this.Matricula.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            this.Matricula.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomCenter;
             // 
             // xrLabel6
             // 
@@ -446,10 +428,10 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel4.BorderWidth = 2F;
             this.xrLabel4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(12.09996F, 143.1079F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(12.09997F, 143.1079F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(727.9003F, 681.0588F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(727.8998F, 681.0587F);
             this.xrLabel4.StylePriority.UseBorderColor = false;
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseBorderWidth = false;
@@ -612,7 +594,6 @@
         internal DevExpress.XtraReports.UI.XRLabel xrLabel6;
         internal DevExpress.XtraReports.UI.XRLabel observaciones;
         internal DevExpress.XtraReports.UI.XRLabel medico;
-        internal DevExpress.XtraReports.UI.XRLabel xrLabel12;
         internal DevExpress.XtraReports.UI.XRLabel Matricula;
         internal DevExpress.XtraReports.UI.XRLabel letrachica;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel13;

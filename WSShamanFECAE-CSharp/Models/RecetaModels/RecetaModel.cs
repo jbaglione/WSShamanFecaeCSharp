@@ -21,6 +21,25 @@ namespace WSShamanFECAE_CSharp.Models.RecetaModels
         public string Observaciones { get; set; }
 
         public string Medico { get; set; }
+
+        public string MatriculaNacional { get; set; }
+        public string MatriculaProvincial { get; set; }
+        public string MatriculaOtra { get; set; }
+
+        public string Matricula
+        {
+            get
+            {
+                if(!string.IsNullOrEmpty(MatriculaNacional))
+                    return string.Format("M.N. {0}", MatriculaNacional);
+                else if (!string.IsNullOrEmpty(MatriculaProvincial))
+                    return string.Format("M.P. {0}", MatriculaProvincial);
+                else if (!string.IsNullOrEmpty(MatriculaOtra))
+                    return string.Format("M.Nro. {0}", MatriculaOtra);
+                return "";
+            }
+        }
+
         public decimal UsuarioExtranetEmisorId { get; set; }
 
 

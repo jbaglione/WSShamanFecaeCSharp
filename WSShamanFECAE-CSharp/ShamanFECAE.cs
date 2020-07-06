@@ -586,6 +586,7 @@ namespace WSShamanFECAE_CSharp
             objReport.observaciones.Text = rm.Observaciones;
             objReport.Fecha.Text = rm.FecReceta.ToShortDateString();
             objReport.medico.Text = rm.Medico;
+            objReport.Matricula.Text = rm.Matricula;
 
 
             SetSubReportMedicamentosText(objReport, rm.Medicamentos);
