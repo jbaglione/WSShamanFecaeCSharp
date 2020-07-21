@@ -6,7 +6,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Paramedic\WSShamanFecae\WSShamanFECAE-CSharp\bin\Release\Publish</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\_Deploys\WSShamanFECAE</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/de/DevExpress.Data.v14.2.resources.dll">
@@ -148,31 +148,31 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>12/07/2015 19:04:38</publishTime>
+      <publishTime>07/12/2015 19:04:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>03/10/2016 14:26:18</publishTime>
+      <publishTime>10/03/2016 14:26:18</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>03/10/2016 14:26:26</publishTime>
+      <publishTime>10/03/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>03/09/2016 12:00:14</publishTime>
+      <publishTime>09/03/2016 12:00:14</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>03/10/2016 14:26:26</publishTime>
+      <publishTime>10/03/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>03/10/2016 14:26:26</publishTime>
+      <publishTime>10/03/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>03/09/2016 11:57:34</publishTime>
+      <publishTime>09/03/2016 11:57:34</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
     <File Include="bin/NLog.dll">
-      <publishTime>07/14/2019 21:11:12</publishTime>
+      <publishTime>04/11/2019 21:13:18</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -244,28 +244,28 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/ShamanClases.dll">
-      <publishTime>03/09/2020 11:05:32</publishTime>
+      <publishTime>07/20/2020 13:26:40</publishTime>
     </File>
     <File Include="bin/ShamanClases.pdb">
-      <publishTime>06/07/2019 09:43:48</publishTime>
+      <publishTime>07/20/2020 13:26:40</publishTime>
     </File>
     <File Include="bin/ShamanClases_CSharp.dll">
-      <publishTime>03/09/2020 11:05:37</publishTime>
+      <publishTime>07/21/2020 15:08:56</publishTime>
     </File>
     <File Include="bin/ShamanClases_CSharp.pdb">
-      <publishTime>06/07/2019 09:43:57</publishTime>
+      <publishTime>07/21/2020 15:08:56</publishTime>
     </File>
     <File Include="bin/WSShamanFECAE-CSharp.dll">
-      <publishTime>03/09/2020 11:05:44</publishTime>
+      <publishTime>07/21/2020 15:17:00</publishTime>
     </File>
     <File Include="bin/WSShamanFECAE-CSharp.pdb">
-      <publishTime>06/07/2019 09:44:05</publishTime>
+      <publishTime>07/21/2020 15:17:00</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>10/24/2018 15:01:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/09/2020 11:05:45</publishTime>
+      <publishTime>06/07/2020 19:22:42</publishTime>
     </File>
     <File Include="WSShamanFECAE.asmx">
       <publishTime>10/24/2018 15:05:06</publishTime>

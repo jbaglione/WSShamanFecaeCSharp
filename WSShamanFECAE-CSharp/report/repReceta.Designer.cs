@@ -40,7 +40,7 @@
             this.medico = new DevExpress.XtraReports.UI.XRLabel();
             this.Matricula = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.observaciones = new DevExpress.XtraReports.UI.XRLabel();
+            this.Diagnostico = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
@@ -62,6 +62,9 @@
             this.Paciente = new DevExpress.XtraReports.UI.XRLabel();
             this.XrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
+            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.TratamientoProlongado = new DevExpress.XtraReports.UI.XRLabel();
+            this.FirmaMedico = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -90,6 +93,9 @@
             // 
             this.grpContrato.BorderColor = System.Drawing.Color.DarkOrange;
             this.grpContrato.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.FirmaMedico,
+            this.xrLabel12,
+            this.TratamientoProlongado,
             this.xrLabel11,
             this.xrLabel13,
             this.nroReceta,
@@ -97,7 +103,7 @@
             this.medico,
             this.Matricula,
             this.xrLabel6,
-            this.observaciones,
+            this.Diagnostico,
             this.xrLabel5,
             this.xrLabel9,
             this.xrLabel10,
@@ -129,7 +135,7 @@
             this.xrLabel11.BorderColor = System.Drawing.Color.Navy;
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(479.5943F, 739.1655F);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(479.5942F, 756.5816F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel11.SizeF = new System.Drawing.SizeF(56F, 23.96F);
@@ -177,17 +183,17 @@
             // 
             this.letrachica.BorderColor = System.Drawing.Color.Navy;
             this.letrachica.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.letrachica.Font = new System.Drawing.Font("Arial", 7F);
-            this.letrachica.LocationFloat = new DevExpress.Utils.PointFloat(14.1F, 792F);
+            this.letrachica.Font = new System.Drawing.Font("Arial", 8F);
+            this.letrachica.LocationFloat = new DevExpress.Utils.PointFloat(14.10001F, 804.5F);
             this.letrachica.Multiline = true;
             this.letrachica.Name = "letrachica";
             this.letrachica.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.letrachica.SizeF = new System.Drawing.SizeF(725.9001F, 29.16669F);
+            this.letrachica.SizeF = new System.Drawing.SizeF(725.9F, 16.66669F);
             this.letrachica.StylePriority.UseBorderColor = false;
             this.letrachica.StylePriority.UseBorders = false;
             this.letrachica.StylePriority.UseFont = false;
             this.letrachica.StylePriority.UseTextAlignment = false;
-            this.letrachica.Text = resources.GetString("letrachica.Text");
+            this.letrachica.Text = "Receta de emergencia COVID-19 emitida en Buenos Aires, Argentina.\r\n";
             this.letrachica.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
             // 
             // medico
@@ -195,7 +201,7 @@
             this.medico.BorderColor = System.Drawing.Color.Navy;
             this.medico.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.medico.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medico.LocationFloat = new DevExpress.Utils.PointFloat(535.5943F, 739.1655F);
+            this.medico.LocationFloat = new DevExpress.Utils.PointFloat(535.5942F, 756.5816F);
             this.medico.Multiline = true;
             this.medico.Name = "medico";
             this.medico.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -212,11 +218,11 @@
             this.Matricula.BorderColor = System.Drawing.Color.Navy;
             this.Matricula.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Matricula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Matricula.LocationFloat = new DevExpress.Utils.PointFloat(504.6431F, 763.1255F);
+            this.Matricula.LocationFloat = new DevExpress.Utils.PointFloat(504.6431F, 780.5416F);
             this.Matricula.Multiline = true;
             this.Matricula.Name = "Matricula";
             this.Matricula.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Matricula.SizeF = new System.Drawing.SizeF(145.3325F, 23.95837F);
+            this.Matricula.SizeF = new System.Drawing.SizeF(145.3325F, 13.54175F);
             this.Matricula.StylePriority.UseBorderColor = false;
             this.Matricula.StylePriority.UseBorders = false;
             this.Matricula.StylePriority.UseFont = false;
@@ -229,33 +235,33 @@
             this.xrLabel6.BorderColor = System.Drawing.Color.Navy;
             this.xrLabel6.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(20.79374F, 673.5105F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(20.79374F, 653.403F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(106F, 23.96F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(90.30628F, 23.96002F);
             this.xrLabel6.StylePriority.UseBorderColor = false;
             this.xrLabel6.StylePriority.UseBorders = false;
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Observaciones:";
+            this.xrLabel6.Text = "Diagnostico:";
             this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
             // 
-            // observaciones
+            // Diagnostico
             // 
-            this.observaciones.BorderColor = System.Drawing.Color.Navy;
-            this.observaciones.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.observaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.observaciones.LocationFloat = new DevExpress.Utils.PointFloat(126.7937F, 673.5105F);
-            this.observaciones.Multiline = true;
-            this.observaciones.Name = "observaciones";
-            this.observaciones.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.observaciones.SizeF = new System.Drawing.SizeF(597.2016F, 23.95831F);
-            this.observaciones.StylePriority.UseBorderColor = false;
-            this.observaciones.StylePriority.UseBorders = false;
-            this.observaciones.StylePriority.UseFont = false;
-            this.observaciones.StylePriority.UseTextAlignment = false;
-            this.observaciones.Text = "observaciones";
-            this.observaciones.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            this.Diagnostico.BorderColor = System.Drawing.Color.Navy;
+            this.Diagnostico.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Diagnostico.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Diagnostico.LocationFloat = new DevExpress.Utils.PointFloat(111.1F, 653.4046F);
+            this.Diagnostico.Multiline = true;
+            this.Diagnostico.Name = "Diagnostico";
+            this.Diagnostico.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Diagnostico.SizeF = new System.Drawing.SizeF(611.9952F, 23.95831F);
+            this.Diagnostico.StylePriority.UseBorderColor = false;
+            this.Diagnostico.StylePriority.UseBorders = false;
+            this.Diagnostico.StylePriority.UseFont = false;
+            this.Diagnostico.StylePriority.UseTextAlignment = false;
+            this.Diagnostico.Text = "diagnostico";
+            this.Diagnostico.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
             // 
             // xrLabel5
             // 
@@ -431,7 +437,7 @@
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(12.09997F, 143.1079F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(727.8998F, 681.0587F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(727.9F, 681.0587F);
             this.xrLabel4.StylePriority.UseBorderColor = false;
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseBorderWidth = false;
@@ -538,12 +544,53 @@
             this.formattingRule1.Condition = "[ap_Piso] == 0";
             this.formattingRule1.Name = "formattingRule1";
             // 
+            // xrLabel12
+            // 
+            this.xrLabel12.BorderColor = System.Drawing.Color.Navy;
+            this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(21.69372F, 677.3612F);
+            this.xrLabel12.Name = "xrLabel12";
+            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel12.SizeF = new System.Drawing.SizeF(165.1646F, 23.96002F);
+            this.xrLabel12.StylePriority.UseBorderColor = false;
+            this.xrLabel12.StylePriority.UseBorders = false;
+            this.xrLabel12.StylePriority.UseFont = false;
+            this.xrLabel12.StylePriority.UseTextAlignment = false;
+            this.xrLabel12.Text = "Tratamiento Prolongado:";
+            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            // 
+            // TratamientoProlongado
+            // 
+            this.TratamientoProlongado.BorderColor = System.Drawing.Color.Navy;
+            this.TratamientoProlongado.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.TratamientoProlongado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TratamientoProlongado.LocationFloat = new DevExpress.Utils.PointFloat(186.8583F, 677.3612F);
+            this.TratamientoProlongado.Multiline = true;
+            this.TratamientoProlongado.Name = "TratamientoProlongado";
+            this.TratamientoProlongado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.TratamientoProlongado.SizeF = new System.Drawing.SizeF(168.2452F, 23.95831F);
+            this.TratamientoProlongado.StylePriority.UseBorderColor = false;
+            this.TratamientoProlongado.StylePriority.UseBorders = false;
+            this.TratamientoProlongado.StylePriority.UseFont = false;
+            this.TratamientoProlongado.StylePriority.UseTextAlignment = false;
+            this.TratamientoProlongado.Text = "tratamiento prolongado";
+            this.TratamientoProlongado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            // 
+            // FirmaMedico
+            // 
+            this.FirmaMedico.Image = ((System.Drawing.Image)(resources.GetObject("FirmaMedico.Image")));
+            this.FirmaMedico.LocationFloat = new DevExpress.Utils.PointFloat(504.6431F, 689.3909F);
+            this.FirmaMedico.Name = "FirmaMedico";
+            this.FirmaMedico.SizeF = new System.Drawing.SizeF(157.2917F, 67.70837F);
+            this.FirmaMedico.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
             // xrSubreport1
             // 
             this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(14.09996F, 242.0067F);
             this.xrSubreport1.Name = "xrSubreport1";
             this.xrSubreport1.ReportSource = new WSShamanFECAE_CSharp.report.subRepMedicamentosText();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(725.8999F, 413.4796F);
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(725.8999F, 400.9796F);
             // 
             // repReceta
             // 
@@ -592,12 +639,15 @@
         internal DevExpress.XtraReports.UI.XRLabel xrLabel2;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel1;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel6;
-        internal DevExpress.XtraReports.UI.XRLabel observaciones;
+        internal DevExpress.XtraReports.UI.XRLabel Diagnostico;
         internal DevExpress.XtraReports.UI.XRLabel medico;
         internal DevExpress.XtraReports.UI.XRLabel Matricula;
         internal DevExpress.XtraReports.UI.XRLabel letrachica;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel13;
         internal DevExpress.XtraReports.UI.XRLabel nroReceta;
         internal DevExpress.XtraReports.UI.XRLabel xrLabel11;
+        internal DevExpress.XtraReports.UI.XRLabel xrLabel12;
+        internal DevExpress.XtraReports.UI.XRLabel TratamientoProlongado;
+        internal DevExpress.XtraReports.UI.XRPictureBox FirmaMedico;
     }
 }

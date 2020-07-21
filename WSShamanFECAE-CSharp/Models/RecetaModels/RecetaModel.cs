@@ -18,13 +18,15 @@ namespace WSShamanFECAE_CSharp.Models.RecetaModels
 
         public DateTime FecReceta { get; set; }
         public string FecHorCreacion { get; set; }
-        public string Observaciones { get; set; }
-
+        public string Diagnostico { get; set; }
+        public short flgTratamientoProlongado { get; set; }
         public string Medico { get; set; }
 
         public string MatriculaNacional { get; set; }
         public string MatriculaProvincial { get; set; }
         public string MatriculaOtra { get; set; }
+
+
 
         public string Matricula
         {
@@ -41,8 +43,7 @@ namespace WSShamanFECAE_CSharp.Models.RecetaModels
         }
 
         public decimal UsuarioExtranetEmisorId { get; set; }
-
-
+        public string Firma { get; set; }
         public List<MedicamentosModel> Medicamentos { get; set; }
     }
 }
