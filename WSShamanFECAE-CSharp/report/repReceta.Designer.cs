@@ -33,6 +33,9 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.grpContrato = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.FirmaMedico = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.TratamientoProlongado = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
             this.nroReceta = new DevExpress.XtraReports.UI.XRLabel();
@@ -62,9 +65,6 @@
             this.Paciente = new DevExpress.XtraReports.UI.XRLabel();
             this.XrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
-            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
-            this.TratamientoProlongado = new DevExpress.XtraReports.UI.XRLabel();
-            this.FirmaMedico = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -130,6 +130,47 @@
             this.grpContrato.StylePriority.UseBorderColor = false;
             this.grpContrato.StylePriority.UseBorders = false;
             // 
+            // FirmaMedico
+            // 
+            this.FirmaMedico.Image = ((System.Drawing.Image)(resources.GetObject("FirmaMedico.Image")));
+            this.FirmaMedico.LocationFloat = new DevExpress.Utils.PointFloat(495F, 677.363F);
+            this.FirmaMedico.Name = "FirmaMedico";
+            this.FirmaMedico.SizeF = new System.Drawing.SizeF(190F, 85F);
+            this.FirmaMedico.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // xrLabel12
+            // 
+            this.xrLabel12.BorderColor = System.Drawing.Color.Navy;
+            this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(21.69372F, 677.3612F);
+            this.xrLabel12.Name = "xrLabel12";
+            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel12.SizeF = new System.Drawing.SizeF(165.1646F, 23.96002F);
+            this.xrLabel12.StylePriority.UseBorderColor = false;
+            this.xrLabel12.StylePriority.UseBorders = false;
+            this.xrLabel12.StylePriority.UseFont = false;
+            this.xrLabel12.StylePriority.UseTextAlignment = false;
+            this.xrLabel12.Text = "Tratamiento Prolongado:";
+            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            // 
+            // TratamientoProlongado
+            // 
+            this.TratamientoProlongado.BorderColor = System.Drawing.Color.Navy;
+            this.TratamientoProlongado.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.TratamientoProlongado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TratamientoProlongado.LocationFloat = new DevExpress.Utils.PointFloat(186.8583F, 677.3612F);
+            this.TratamientoProlongado.Multiline = true;
+            this.TratamientoProlongado.Name = "TratamientoProlongado";
+            this.TratamientoProlongado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.TratamientoProlongado.SizeF = new System.Drawing.SizeF(168.2452F, 23.95831F);
+            this.TratamientoProlongado.StylePriority.UseBorderColor = false;
+            this.TratamientoProlongado.StylePriority.UseBorders = false;
+            this.TratamientoProlongado.StylePriority.UseFont = false;
+            this.TratamientoProlongado.StylePriority.UseTextAlignment = false;
+            this.TratamientoProlongado.Text = "tratamiento prolongado";
+            this.TratamientoProlongado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            // 
             // xrLabel11
             // 
             this.xrLabel11.BorderColor = System.Drawing.Color.Navy;
@@ -184,17 +225,16 @@
             this.letrachica.BorderColor = System.Drawing.Color.Navy;
             this.letrachica.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.letrachica.Font = new System.Drawing.Font("Arial", 8F);
-            this.letrachica.LocationFloat = new DevExpress.Utils.PointFloat(14.10001F, 804.5F);
-            this.letrachica.Multiline = true;
+            this.letrachica.LocationFloat = new DevExpress.Utils.PointFloat(14.1F, 800F);
             this.letrachica.Name = "letrachica";
             this.letrachica.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.letrachica.SizeF = new System.Drawing.SizeF(725.9F, 16.66669F);
+            this.letrachica.SizeF = new System.Drawing.SizeF(725.9F, 20F);
             this.letrachica.StylePriority.UseBorderColor = false;
             this.letrachica.StylePriority.UseBorders = false;
             this.letrachica.StylePriority.UseFont = false;
             this.letrachica.StylePriority.UseTextAlignment = false;
             this.letrachica.Text = "Receta de emergencia COVID-19 emitida en Buenos Aires, Argentina.\r\n";
-            this.letrachica.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            this.letrachica.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // medico
             // 
@@ -543,47 +583,6 @@
             // 
             this.formattingRule1.Condition = "[ap_Piso] == 0";
             this.formattingRule1.Name = "formattingRule1";
-            // 
-            // xrLabel12
-            // 
-            this.xrLabel12.BorderColor = System.Drawing.Color.Navy;
-            this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(21.69372F, 677.3612F);
-            this.xrLabel12.Name = "xrLabel12";
-            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel12.SizeF = new System.Drawing.SizeF(165.1646F, 23.96002F);
-            this.xrLabel12.StylePriority.UseBorderColor = false;
-            this.xrLabel12.StylePriority.UseBorders = false;
-            this.xrLabel12.StylePriority.UseFont = false;
-            this.xrLabel12.StylePriority.UseTextAlignment = false;
-            this.xrLabel12.Text = "Tratamiento Prolongado:";
-            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
-            // TratamientoProlongado
-            // 
-            this.TratamientoProlongado.BorderColor = System.Drawing.Color.Navy;
-            this.TratamientoProlongado.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.TratamientoProlongado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TratamientoProlongado.LocationFloat = new DevExpress.Utils.PointFloat(186.8583F, 677.3612F);
-            this.TratamientoProlongado.Multiline = true;
-            this.TratamientoProlongado.Name = "TratamientoProlongado";
-            this.TratamientoProlongado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TratamientoProlongado.SizeF = new System.Drawing.SizeF(168.2452F, 23.95831F);
-            this.TratamientoProlongado.StylePriority.UseBorderColor = false;
-            this.TratamientoProlongado.StylePriority.UseBorders = false;
-            this.TratamientoProlongado.StylePriority.UseFont = false;
-            this.TratamientoProlongado.StylePriority.UseTextAlignment = false;
-            this.TratamientoProlongado.Text = "tratamiento prolongado";
-            this.TratamientoProlongado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            // 
-            // FirmaMedico
-            // 
-            this.FirmaMedico.Image = ((System.Drawing.Image)(resources.GetObject("FirmaMedico.Image")));
-            this.FirmaMedico.LocationFloat = new DevExpress.Utils.PointFloat(504.6431F, 689.3909F);
-            this.FirmaMedico.Name = "FirmaMedico";
-            this.FirmaMedico.SizeF = new System.Drawing.SizeF(157.2917F, 67.70837F);
-            this.FirmaMedico.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // xrSubreport1
             // 
