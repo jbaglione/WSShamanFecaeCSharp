@@ -46,6 +46,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v14.2, Version=14.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -118,6 +130,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="CrystalReport\InformeCOVID.rpt" />
     <None Include="Properties\PublishProfiles\baglione.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -138,11 +151,13 @@
     <Content Include="WSShamanFECAE.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\RecetaModels\MedicamentosModel.cs" />
     <Compile Include="Models\RecetaModels\ClientesPlanes.cs" />
     <Compile Include="Models\RecetaModels\ClientesRecetas.cs" />
     <Compile Include="Models\RecetaModels\RecetaModel.cs" />
+    <Compile Include="Models\InformeCovidModel.cs" />
     <Compile Include="Models\ReciboModel.cs" />
     <Compile Include="Models\ImportesPorTipo.cs" />
     <Compile Include="Models\ImporteItem.cs" />
@@ -158,6 +173,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSeters\InformeCovidReportSetter.cs" />
+    <Compile Include="ReportsSeters\RecetaReportSetter.cs" />
+    <Compile Include="ReportsSeters\ReciboReportSetter.cs" />
+    <Compile Include="ReportsSeters\ContratoVentaReportSetter.cs" />
     <Compile Include="report\repCertificadoCaja.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -187,6 +206,30 @@
     </Compile>
     <Compile Include="report\repContratoVenta_tc.Designer.cs">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repInformeCovidOld3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repInformeCovidOld3.Designer.cs">
+      <DependentUpon>repInformeCovidOld3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repInformeCovidOld2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repInformeCovidOld2.Designer.cs">
+      <DependentUpon>repInformeCovidOld2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repInformeCovidOld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repInformeCovidOld.Designer.cs">
+      <DependentUpon>repInformeCovidOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\repInformeCovid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\repInformeCovid.Designer.cs">
+      <DependentUpon>repInformeCovid.cs</DependentUpon>
     </Compile>
     <Compile Include="report\repReceta.cs">
       <SubType>Component</SubType>
@@ -275,6 +318,18 @@
     <EmbeddedResource Include="report\repContratoVenta_tc.resx">
       <DependentUpon>repContratoVenta_tc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\repInformeCovidOld3.resx">
+      <DependentUpon>repInformeCovidOld3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repInformeCovidOld2.resx">
+      <DependentUpon>repInformeCovidOld2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repInformeCovidOld.resx">
+      <DependentUpon>repInformeCovidOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\repInformeCovid.resx">
+      <DependentUpon>repInformeCovid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="report\repReceta.resx">
       <DependentUpon>repReceta.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +359,7 @@
       <Name>ShamanClases_CSharp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

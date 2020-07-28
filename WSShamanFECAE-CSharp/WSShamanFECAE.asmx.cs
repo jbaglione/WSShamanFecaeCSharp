@@ -43,7 +43,7 @@ namespace WSShamanFECAE_CSharp
         }
 
         /// <summary>
-        /// 
+        /// GetRecetaPdf
         /// </summary>
         /// <param name="pRecetaId"></param>
         /// <param name="pUsrId"></param>
@@ -54,6 +54,20 @@ namespace WSShamanFECAE_CSharp
             ShamanFECAE FECAE = new ShamanFECAE();
             return FECAE.GetRecetaPdf(pRecetaId, pUsrId);
         }
+
+        /// <summary>
+        /// GetInformeCovidPdf
+        /// </summary>
+        /// <param name="pIncidenteId"></param>
+        /// <returns></returns>
+        [WebMethod()]
+        public byte[] GetInformeCovidPdf(decimal pIncidenteId)
+        {
+            ShamanFECAE FECAE = new ShamanFECAE();
+            return FECAE.GetInformeCovidPdfCrystal(pIncidenteId);
+            //return FECAE.GetInformeCovidPdf(pIncidenteId);
+        }
+        
 
         /// <summary>
         /// 
