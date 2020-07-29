@@ -407,7 +407,8 @@ namespace WSShamanFECAE_CSharp
             {
                 ReportDocument rpt = new ReportDocument();
                 rpt.Load(System.Web.Hosting.HostingEnvironment.MapPath(@"~/CrystalReport/InformeCOVID.rpt"));
-                rpt.SetDatabaseLogon("_system", "sys", @"200.49.156.125", "SHAMAN");
+                //rpt.SetDatabaseLogon("_system", "sys", @"200.49.156.125:1972", "SHAMAN", false);
+
                 byte[] getBytes = null;
                 rpt.SetParameterValue("IncidenteId", pIncidenteId);
 
@@ -417,8 +418,6 @@ namespace WSShamanFECAE_CSharp
                 getBytes = new byte[stream.Length];
                 stream.Read(getBytes, 0, Convert.ToInt32(stream.Length - 1));
 
-                //MemoryStream ms = (MemoryStream)rptExp;
-                //getBytes = ms.ToArray();
                 return getBytes;
             }
             catch (Exception ex)
