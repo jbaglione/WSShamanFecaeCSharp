@@ -58,6 +58,7 @@
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.Fecha = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel79 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
@@ -65,7 +66,6 @@
             this.Paciente = new DevExpress.XtraReports.UI.XRLabel();
             this.XrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
-            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -225,7 +225,7 @@
             this.letrachica.BorderColor = System.Drawing.Color.Navy;
             this.letrachica.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.letrachica.Font = new System.Drawing.Font("Arial", 8F);
-            this.letrachica.LocationFloat = new DevExpress.Utils.PointFloat(14.1F, 800F);
+            this.letrachica.LocationFloat = new DevExpress.Utils.PointFloat(14.1F, 826F);
             this.letrachica.Name = "letrachica";
             this.letrachica.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.letrachica.SizeF = new System.Drawing.SizeF(725.9F, 20F);
@@ -245,7 +245,7 @@
             this.medico.Multiline = true;
             this.medico.Name = "medico";
             this.medico.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.medico.SizeF = new System.Drawing.SizeF(188.401F, 23.95837F);
+            this.medico.SizeF = new System.Drawing.SizeF(198F, 23.95837F);
             this.medico.StylePriority.UseBorderColor = false;
             this.medico.StylePriority.UseBorders = false;
             this.medico.StylePriority.UseFont = false;
@@ -477,7 +477,7 @@
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(12.09997F, 143.1079F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(727.9F, 681.0587F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(727.9F, 704.3717F);
             this.xrLabel4.StylePriority.UseBorderColor = false;
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseBorderWidth = false;
@@ -498,6 +498,13 @@
             this.xrLabel7.StylePriority.UseBorders = false;
             this.xrLabel7.StylePriority.UseBorderWidth = false;
             this.xrLabel7.StylePriority.UseFont = false;
+            // 
+            // xrSubreport1
+            // 
+            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(14.09996F, 242.0067F);
+            this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ReportSource = new WSShamanFECAE_CSharp.report.subRepMedicamentosText();
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(725.8999F, 400.9796F);
             // 
             // Fecha
             // 
@@ -583,13 +590,6 @@
             // 
             this.formattingRule1.Condition = "[ap_Piso] == 0";
             this.formattingRule1.Name = "formattingRule1";
-            // 
-            // xrSubreport1
-            // 
-            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(14.09996F, 242.0067F);
-            this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ReportSource = new WSShamanFECAE_CSharp.report.subRepMedicamentosText();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(725.8999F, 400.9796F);
             // 
             // repReceta
             // 
