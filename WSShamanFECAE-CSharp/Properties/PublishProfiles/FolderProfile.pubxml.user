@@ -9,260 +9,311 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <_PublishTargetUrl>C:\_Deploys\WSShamanFECAE</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ClientDoc.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommLayer.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonControls.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonObjectModel.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Controllers.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CubeDefModel.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataDefModel.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ObjectFactory.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Prompting.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ReportDefModel.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.XmlSerialize.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>03/31/2020 11:32:08</publishTime>
+    </File>
     <File Include="bin/de/DevExpress.Data.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:34</publishTime>
     </File>
     <File Include="bin/de/DevExpress.DataAccess.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:35</publishTime>
     </File>
     <File Include="bin/de/DevExpress.Office.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/de/DevExpress.PivotGrid.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/de/DevExpress.Printing.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/de/DevExpress.RichEdit.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/de/DevExpress.Sparkline.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/de/DevExpress.Xpo.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/de/DevExpress.XtraCharts.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/de/DevExpress.XtraGauges.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/de/DevExpress.XtraReports.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/DevExpress.Charts.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/DevExpress.Data.v14.2.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:34</publishTime>
     </File>
     <File Include="bin/DevExpress.DataAccess.v14.2.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:35</publishTime>
     </File>
     <File Include="bin/DevExpress.Office.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/DevExpress.PivotGrid.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/DevExpress.Printing.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/DevExpress.RichEdit.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/DevExpress.Sparkline.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/DevExpress.Xpo.v14.2.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/DevExpress.XtraCharts.v14.2.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/DevExpress.XtraGauges.v14.2.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/DevExpress.XtraReports.v14.2.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Data.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:34</publishTime>
     </File>
     <File Include="bin/es/DevExpress.DataAccess.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:35</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Office.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/es/DevExpress.PivotGrid.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Printing.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/es/DevExpress.RichEdit.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Sparkline.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Xpo.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/es/DevExpress.XtraCharts.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/es/DevExpress.XtraGauges.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/es/DevExpress.XtraReports.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/InterSystems.Data.CacheClient30.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/14/2018 16:02:52</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.Data.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:34</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.DataAccess.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:35</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.Office.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.PivotGrid.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.Printing.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.RichEdit.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.Sparkline.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.Xpo.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.XtraCharts.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.XtraGauges.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ja/DevExpress.XtraReports.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>07/12/2015 19:04:38</publishTime>
+      <publishTime>12/07/2015 19:04:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>10/03/2016 14:26:18</publishTime>
+      <publishTime>03/10/2016 14:26:18</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>10/03/2016 14:26:26</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>09/03/2016 12:00:14</publishTime>
+      <publishTime>03/09/2016 12:00:14</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>10/03/2016 14:26:26</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>10/03/2016 14:26:26</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>09/03/2016 11:57:34</publishTime>
+      <publishTime>03/09/2016 11:57:34</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
     <File Include="bin/NLog.dll">
-      <publishTime>04/11/2019 21:13:18</publishTime>
+      <publishTime>11/04/2019 21:13:18</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:44</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.Data.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:34</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.DataAccess.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:35</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.Office.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.PivotGrid.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.Printing.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.RichEdit.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.Sparkline.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:46</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.Xpo.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.XtraCharts.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.XtraGauges.v14.2.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:49</publishTime>
     </File>
     <File Include="bin/ru/DevExpress.XtraReports.v14.2.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/ShamanClases.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/30/2020 14:54:16</publishTime>
     </File>
     <File Include="bin/ShamanClases.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/30/2020 14:54:16</publishTime>
     </File>
     <File Include="bin/ShamanClases_CSharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/04/2020 12:51:51</publishTime>
     </File>
     <File Include="bin/ShamanClases_CSharp.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/04/2020 12:51:51</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>06/11/2020 18:50:48</publishTime>
     </File>
     <File Include="bin/WSShamanFECAE-CSharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/04/2020 12:51:59</publishTime>
     </File>
     <File Include="bin/WSShamanFECAE-CSharp.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/04/2020 12:51:59</publishTime>
+    </File>
+    <File Include="CrystalReport/InformeCOVID.rpt">
+      <publishTime>07/28/2020 10:25:49</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/24/2018 15:01:22</publishTime>
     </File>
     <File Include="report/repInformeCovid.cs">
       <publishTime>07/23/2020 12:02:13</publishTime>
@@ -274,10 +325,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/23/2020 12:01:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/04/2020 12:52:00</publishTime>
     </File>
     <File Include="WSShamanFECAE.asmx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/24/2018 15:05:06</publishTime>
     </File>
   </ItemGroup>
 </Project>
