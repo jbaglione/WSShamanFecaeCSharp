@@ -1,0 +1,10 @@
+2021-04-13 13:12:50.7761|ERROR|WSShamanFECAE_CSharp.ShamanFECAE|CrystalDecisions.CrystalReports.Engine.LogOnException: No se pudo conectar con la base de datos. ---> System.Runtime.InteropServices.COMException: No se pudo conectar con la base de datos.
+   en CrystalDecisions.ReportAppServer.Controllers.ReportSourceClass.Export(ExportOptions pExportOptions, RequestContext pRequestContext)
+   en CrystalDecisions.ReportSource.EromReportSourceBase.ExportToStream(ExportRequestContext reqContext)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en CrystalDecisions.ReportAppServer.ConvertDotNetToErom.ThrowDotNetException(Exception e)
+   en CrystalDecisions.ReportSource.EromReportSourceBase.ExportToStream(ExportRequestContext reqContext)
+   en CrystalDecisions.CrystalReports.Engine.FormatEngine.ExportToStream(ExportRequestContext reqContext)
+   en CrystalDecisions.CrystalReports.Engine.ReportDocument.ExportToStream(ExportOptions options)
+   en CrystalDecisions.CrystalReports.Engine.ReportDocument.ExportToStream(ExportFormatType formatType)
+   en WSShamanFECAE_CSharp.ShamanFECAE.GetInformeCovidPdfCrystal(Decimal pIncidenteId)

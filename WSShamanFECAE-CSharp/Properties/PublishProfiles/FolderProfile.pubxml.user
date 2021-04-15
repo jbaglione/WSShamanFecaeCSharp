@@ -216,8 +216,11 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/09/2019 00:56:44</publishTime>
+    </File>
     <File Include="bin/NLog.dll">
-      <publishTime>11/04/2019 21:13:18</publishTime>
+      <publishTime>03/24/2021 22:05:14</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -289,22 +292,22 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/31/2018 17:05:50</publishTime>
     </File>
     <File Include="bin/ShamanClases.dll">
-      <publishTime>07/30/2020 14:54:16</publishTime>
+      <publishTime>04/15/2021 20:23:47</publishTime>
     </File>
     <File Include="bin/ShamanClases.pdb">
       <publishTime>07/30/2020 14:54:16</publishTime>
     </File>
     <File Include="bin/ShamanClases_CSharp.dll">
-      <publishTime>08/04/2020 12:51:51</publishTime>
+      <publishTime>04/15/2021 20:23:55</publishTime>
     </File>
     <File Include="bin/ShamanClases_CSharp.pdb">
       <publishTime>08/04/2020 12:51:51</publishTime>
     </File>
     <File Include="bin/stdole.dll">
-      <publishTime>06/11/2020 18:50:48</publishTime>
+      <publishTime>07/26/2012 19:08:06</publishTime>
     </File>
     <File Include="bin/WSShamanFECAE-CSharp.dll">
-      <publishTime>08/04/2020 12:51:59</publishTime>
+      <publishTime>04/15/2021 20:24:08</publishTime>
     </File>
     <File Include="bin/WSShamanFECAE-CSharp.pdb">
       <publishTime>08/04/2020 12:51:59</publishTime>
@@ -312,8 +315,11 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="CrystalReport/InformeCOVID.rpt">
       <publishTime>07/28/2020 10:25:49</publishTime>
     </File>
+    <File Include="Nlog.config">
+      <publishTime>04/13/2021 13:19:23</publishTime>
+    </File>
     <File Include="packages.config">
-      <publishTime>10/24/2018 15:01:22</publishTime>
+      <publishTime>04/13/2021 12:29:18</publishTime>
     </File>
     <File Include="report/repInformeCovid.cs">
       <publishTime>07/23/2020 12:02:13</publishTime>
@@ -325,7 +331,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/23/2020 12:01:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/04/2020 12:52:00</publishTime>
+      <publishTime>04/15/2021 20:24:10</publishTime>
     </File>
     <File Include="WSShamanFECAE.asmx">
       <publishTime>10/24/2018 15:05:06</publishTime>

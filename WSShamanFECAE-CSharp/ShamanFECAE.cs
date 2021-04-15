@@ -17,13 +17,14 @@ using WSShamanFECAE_CSharp.ReportsSeters;
 using static WSShamanFECAE_CSharp.Helpers.Helpers;
 using CrystalDecisions.Shared;
 using CrystalDecisions.CrystalReports.Engine;
+using NLog;
 
 namespace WSShamanFECAE_CSharp
 {
     public class ShamanFECAE
     {
         private NameValueCollection appSettings = WebConfigurationManager.AppSettings;
-
+        private Logger logger = LogManager.GetCurrentClassLogger();
         #region Reportes
         public byte[] GetPDF_Cache(decimal pDocId, decimal pUsrId)
         {
@@ -367,6 +368,12 @@ namespace WSShamanFECAE_CSharp
             }
             return Encoding.Unicode.GetBytes("No pudo armarse el PDF");
         }
+
+        /// <summary>
+        /// GetInformeCovidPdf. Primer metodo implementado para crearlo a travez de devexpress. Se reenderiza mal.
+        /// </summary>
+        /// <param name="pIncidenteId"></param>
+        /// <returns></returns>
         public byte[] GetInformeCovidPdf(decimal pIncidenteId)
         {
             MemoryStream vRet = null;
@@ -391,21 +398,38 @@ namespace WSShamanFECAE_CSharp
                         objReport.ExportToPdf(vRet);
                     }
 
-                    return vRet == null ? Encoding.Unicode.GetBytes("No pudo armarse el PDF") : vRet.ToArray();
+                    //stream.Read(getBytes, 0, Convert.ToInt32(stream.Length - 1));
+                    if (vRet == null)
+                    {
+                        throw new Exception("No pudo armarse el PDF");
+                    }
+                        
+                    var res = vRet.ToArray();
+                    string base64String = Convert.ToBase64String(res, 0, res.Length);
+                    return res;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return Encoding.Unicode.GetBytes("No pudo armarse el PDF");
+            throw new Exception("No pudo armarse el PDF");
         }
 
+        
+
+
+
+        /// <summary>
+        /// GetInformeCovidPdfCrystal. Segundo metodo implementado con Crystal Report, falla aleatoriamente la conexion a la base de datos.
+        /// </summary>
+        /// <param name="pIncidenteId"></param>
+        /// <returns></returns>
         public byte[] GetInformeCovidPdfCrystal(decimal pIncidenteId)
         {
+            ReportDocument rpt = new ReportDocument();
             try
             {
-                ReportDocument rpt = new ReportDocument();
                 rpt.Load(System.Web.Hosting.HostingEnvironment.MapPath(@"~/CrystalReport/InformeCOVID.rpt"));
                 //rpt.SetDatabaseLogon("_system", "sys", @"200.49.156.125:1972", "SHAMAN", false);
 
@@ -418,14 +442,71 @@ namespace WSShamanFECAE_CSharp
                 getBytes = new byte[stream.Length];
                 stream.Read(getBytes, 0, Convert.ToInt32(stream.Length - 1));
 
+                rpt.Database.Dispose();
+                rpt.Dispose();
+                rpt.Close();
+                logger.Info($"GetInformeCovidPdfCrystal pIncidenteId={pIncidenteId} Return OK.");
                 return getBytes;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                try
+                {
+                    rpt.Database.Dispose();
+                    rpt.Dispose();
+                    rpt.Close();
+                }
+                catch (Exception ex2)
+                {
+                    logger.Error(ex2);
+                    throw ex2;
+                }
+
+                throw ex;
+            }
+        }
+
+
+        /// <summary>
+        /// GetInformeCovidPdfV2. Terecer metodo implementado para crearlo a travez de devexpress. Recibiendo como parametros todos los datos a imprimir.
+        /// </summary>
+        /// <param name="informeEpidemiologia"></param>
+        /// <returns></returns>
+        public byte[] GetInformeCovidPdfV2(InformeEpidemiologia informeEpidemiologia)
+        {
+            MemoryStream vRet = null;
+
+            try
+            {
+                if (informeEpidemiologia == null)
+                    return Encoding.Unicode.GetBytes("Solicitud inválida. Debe enviar la información correspondiente.");
+
+                if (informeEpidemiologia != null)
+                {
+                    ReporteEpidemiologia1ReportSetter repSetter = new ReporteEpidemiologia1ReportSetter();
+
+                    using (reporteEpidemiologia1 objReport = new reporteEpidemiologia1())
+                    {
+                        repSetter.PersonalizarCamposInforme(objReport, informeEpidemiologia);
+
+                        vRet = new MemoryStream();
+                        objReport.ExportToPdf(vRet);
+                    }
+
+                    //stream.Read(getBytes, 0, Convert.ToInt32(stream.Length - 1));
+
+                    var res = vRet == null ? Encoding.Unicode.GetBytes("No pudo armarse el PDF") : vRet.ToArray();
+                    string base64String = Convert.ToBase64String(res, 0, res.Length);
+                    return res;
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            return Encoding.Unicode.GetBytes("No pudo armarse el PDF");
         }
-
         #endregion
 
         #region Data

@@ -1,22 +1,12 @@
 ﻿using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Xml;
-using ShamanClases;
-using DevExpress.XtraReports.UI;
-using System.Web.Configuration;
+
 using System;
-using WSShamanFECAE_CSharp.Properties;
-using WSShamanFECAE_CSharp.report;
-//using static ShamanClases.modDeclares;
-using System.Web;
-using System.IO;
-using System.Collections.Specialized;
-using System.Collections.Generic;
-using System.Drawing;
+
 using WSShamanFECAE_CSharp.Enums;
+using WSShamanFECAE_CSharp.Models;
+using NLog;
 
 namespace WSShamanFECAE_CSharp
 {
@@ -29,6 +19,7 @@ namespace WSShamanFECAE_CSharp
     [ToolboxItem(false)]
     public class WSShamanFECAE : WebService
     {
+        private Logger logger = LogManager.GetCurrentClassLogger();
         /// <summary>
         /// 
         /// </summary>
@@ -64,10 +55,46 @@ namespace WSShamanFECAE_CSharp
         public byte[] GetInformeCovidPdf(decimal pIncidenteId)
         {
             ShamanFECAE FECAE = new ShamanFECAE();
-            return FECAE.GetInformeCovidPdfCrystal(pIncidenteId);
-            //return FECAE.GetInformeCovidPdf(pIncidenteId);
+            // Se intentara 3 veces.
+            try
+            {
+                logger.Info($"GetInformeCovidPdfCrystal pIncidenteId={pIncidenteId} (primer intento)");
+                return FECAE.GetInformeCovidPdfCrystal(pIncidenteId);
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    logger.Info($"GetInformeCovidPdfCrystal pIncidenteId={pIncidenteId} (segundo intento)");
+                    return FECAE.GetInformeCovidPdfCrystal(pIncidenteId);
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        logger.Info($"GetInformeCovidPdfCrystal pIncidenteId={pIncidenteId} (tercer intento)");
+                        return FECAE.GetInformeCovidPdfCrystal(pIncidenteId);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error($"GetInformeCovidPdfCrystal pIncidenteId={pIncidenteId} (fallaron los tres intentos) Exception = {ex}");
+                        throw ex;
+                    }
+                }
+            }
         }
-        
+
+        /// <summary>
+        /// GetInformeCovidPdfV2
+        /// </summary>
+        /// <param name="pInformeEpidemiologia"></param>
+        /// <returns></returns>
+        [WebMethod()]
+        public byte[] GetInformeCovidPdfV2(InformeEpidemiologia pInformeEpidemiologia)
+        {
+            ShamanFECAE FECAE = new ShamanFECAE();
+            return FECAE.GetInformeCovidPdfV2(pInformeEpidemiologia);
+        }
 
         /// <summary>
         /// 
